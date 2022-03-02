@@ -1,10 +1,10 @@
-#🔁Sorting
+# 🔁Sorting
 
 Sorting is a C++ project that empirically verifies the upper bound
 of various sorting algorithms, as well as gather performance data
 on algorithms in the same Big-O class.
 
-##Installation 
+## Installation 
 
 This project can be run in the commandline via g++, or by compiling in CLion using the CMakeLists.txt file with your chosen compiler. Below I will show you how to install g++.
 
@@ -17,7 +17,7 @@ If it is not installed, install it.
 $ sudo apt-get install g++
 ```
 
-##Usage
+## Usage
 First, navigate to the project directory.
 ```text
 $ cd FullFilePathHere
@@ -28,7 +28,7 @@ $ g++ src/main.cpp
 ```
 Run the program, this program takes __ command line arguments
 
-##Credits
+## Credits
 
 This project was completed entirely by Zachary Suzuki and 
 Daniel Ryan for CS3353, Fundamentals of Algorithms taught by Dr. Fontenot.
