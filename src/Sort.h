@@ -7,7 +7,7 @@
 
 template <class T>
 class Sort {
-private:
+protected:
     T* data;
 public:
     /**
@@ -15,10 +15,18 @@ public:
      */
     Sort();
     /**
+     * Copy Constructor
+     */
+    Sort(const Sort<T>&);
+    /**
      * Overloaded Constructor
      * @param T* array of templated elements
      */
     Sort(T*);
+    /**
+     * Destructor
+     */
+     ~Sort();
 
     /**
      * Sorts the data array and returns the result
