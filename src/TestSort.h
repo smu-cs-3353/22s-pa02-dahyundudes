@@ -7,8 +7,13 @@
 
 #include "Sort.h"
 
-class TestSort : public Sort {
+template <class T>
+class TestSort : public Sort<T> {
+public:
+    TestSort();
+    TestSort(T*);
 
+    T* sort();
 };
 
 
