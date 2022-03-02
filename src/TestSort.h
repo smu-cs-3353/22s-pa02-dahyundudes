@@ -67,9 +67,16 @@ TestSort<T>::~TestSort() {
 template <class T>
 T* TestSort<T>::sort() {
     TestSort<T> temp(*this);
-    //TODO: randomly shuffle the array in temp
-    //TODO: check if the array is sorted
-    //TODO: otherwise repeat
+    bool sorted = false;
+    while (!sorted) {
+        sorted = true;
+        for (int i = 1; i < sizeof(temp.data); i++)
+            if (temp.data[i] < temp.data[i - 1]) {
+                sorted = false;
+                break;
+            }
+    }
+    return true;
 }
 
 #endif //INC_22S_PA02_TESTSORT_H
