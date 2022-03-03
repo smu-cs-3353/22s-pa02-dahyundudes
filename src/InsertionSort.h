@@ -1,47 +1,47 @@
 //
-// Created by Zachary on 3/2/2022.
+// Created by Zachary on 3/3/2022.
 //
 
-#ifndef INC_22S_PA02_TESTSORT_H
-#define INC_22S_PA02_TESTSORT_H
+#ifndef INC_22S_PA02_INSERTIONSORT_H
+#define INC_22S_PA02_INSERTIONSORT_H
 
 #include "Sort.h"
 
 template <class T>
-class TestSort : public Sort<T> {
+class InsertionSort : public Sort<T> {
 public:
     /**
      * Default Constructor
      */
-    TestSort();
+    InsertionSort();
     /**
      * Copy Constructor
      */
-    TestSort(const Sort<T>&);
+    InsertionSort(const Sort<T>&);
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    TestSort(T*);
+    InsertionSort(T*);
     /**
      * Destructor
      */
-    ~TestSort();
+    ~InsertionSort();
 
     /**
-     * Sorts the data array using MiracleSort and returns the result
+     * Sorts the data array using InsertionSort and returns the result
      * @return T* array of templated elements
      */
     T* sort();
 };
 
 template <class T>
-TestSort<T>::TestSort() {
+InsertionSort<T>::InsertionSort() {
     this->data = nullptr;
 }
 
 template <class T>
-TestSort<T>::TestSort(const Sort<T>& other) {
+InsertionSort<T>::InsertionSort(const Sort<T>& other) {
     if (sizeof(other.data) > 0) {
         this->data = new T[sizeof(other.data)];
         for (int i = 0; i < sizeof(other.data); i++)
@@ -50,7 +50,7 @@ TestSort<T>::TestSort(const Sort<T>& other) {
 }
 
 template <class T>
-TestSort<T>::TestSort(T* other) {
+InsertionSort<T>::InsertionSort(T* other) {
     if (sizeof(other > 0)) {
         this->data = new T[sizeof(other)];
         for (int i = 0; i < sizeof(other); i++)
@@ -59,24 +59,24 @@ TestSort<T>::TestSort(T* other) {
 }
 
 template <class T>
-TestSort<T>::~TestSort() {
+InsertionSort<T>::~InsertionSort() {
     if (this->data != nullptr)
         delete[] this->data;
 }
 
 template <class T>
-T* TestSort<T>::sort() {
-    TestSort<T> temp(*this);
-    bool sorted = false;
-    while (!sorted) {
-        sorted = true;
-        for (int i = 1; i < sizeof(temp.data); i++)
-            if (temp.data[i] < temp.data[i - 1]) {
-                sorted = false;
-                break;
-            }
+T* InsertionSort<T>::sort() {
+    InsertionSort<T> temp(this->data);
+    for (int i = 1; i < sizeof(temp.data); i++) {
+        int j = i;
+        while (temp.data[j] < temp.data[j-1] && j > 0) {
+            T val = temp.data[j-1];
+            temp.data[j-1] = temp.data[j];
+            temp.data[j] = val;
+            j--;
+        }
     }
     return temp.data;
 }
 
-#endif //INC_22S_PA02_TESTSORT_H
+#endif //INC_22S_PA02_INSERTIONSORT_H
