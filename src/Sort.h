@@ -26,7 +26,7 @@ public:
     /**
      * Destructor
      */
-     ~Sort();
+    ~Sort();
 
     /**
      * Sorts the data array and returns the result

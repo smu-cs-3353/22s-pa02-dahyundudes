@@ -5,6 +5,10 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
+#include "Sort.h"
+#include "SelectionSort.h"
+#include "InsertionSort.h"
+#include "QuickSort.h"
 
 using namespace std;
 
@@ -19,5 +23,37 @@ int main(int argc, char** argv) {
                 cout << ", ";
         }
         cout << endl;
+
+        int* temp = new int[10];
+        for (int i = 0; i < 10; i++) {
+            temp[9 - i] = i;
+        }
+
+        int* result;
+
+        for (int i = 0; i < sizeof(temp); i++) {
+            cout << temp[i] << ",";
+        }
+        cout << endl;
+        /*
+        Sort<int>* select = new SelectionSort<int>(temp);
+        result = select->sort();
+        for (int i = 0; i < sizeof(result); i++) {
+            cout << result[i] << ",";
+        }
+        cout << endl;
+        InsertionSort<int>* insert = new InsertionSort<int>(temp);
+        result = insert->sort();
+        for (int i = 0; i < sizeof(result); i++) {
+            cout << result[i] << ",";
+        }
+        cout << endl;
+        QuickSort<int>* quick = new QuickSort<int>(temp);
+        result = quick->sort();
+        for (int i = 0; i < sizeof(result); i++) {
+            cout << result[i] << ",";
+        }
+        cout << endl;
+        */
     }
 }

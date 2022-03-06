@@ -13,56 +13,23 @@ public:
     /**
      * Default Constructor
      */
-    SelectionSort();
+    SelectionSort() : Sort<T>() {};
     /**
      * Copy Constructor
      */
-    SelectionSort(const Sort<T>&);
+    SelectionSort(const Sort<T>& s) : Sort<T>(s) {};
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    SelectionSort(T*);
-    /**
-     * Destructor
-     */
-    ~SelectionSort();
+    SelectionSort(T* s) : Sort<T>(s) {};
 
     /**
      * Sorts the data array using SelectionSort and returns the result
      * @return T* array of templated elements
      */
-    T* sort();
+    T* sort() override;
 };
-
-template <class T>
-SelectionSort<T>::SelectionSort() {
-    this->data = nullptr;
-}
-
-template <class T>
-SelectionSort<T>::SelectionSort(const Sort<T>& other) {
-    if (sizeof(other.data) > 0) {
-        this->data = new T[sizeof(other.data)];
-        for (int i = 0; i < sizeof(other.data); i++)
-            this->data[i] = other.data[i];
-    }
-}
-
-template <class T>
-SelectionSort<T>::SelectionSort(T* other) {
-    if (sizeof(other > 0)) {
-        this->data = new T[sizeof(other)];
-        for (int i = 0; i < sizeof(other); i++)
-            this->data[i] = other[i];
-    }
-}
-
-template <class T>
-SelectionSort<T>::~SelectionSort() {
-    if (this->data != nullptr)
-        delete[] this->data;
-}
 
 template <class T>
 T* SelectionSort<T>::sort() {

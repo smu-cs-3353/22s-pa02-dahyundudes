@@ -32,7 +32,7 @@ public:
      * Sorts the data array using QuickSort and returns the result
      * @return T* array of templated elements
      */
-    T* sort();
+    T* sort() override;
 
     T* sortHelp(T*, int, int);
 
