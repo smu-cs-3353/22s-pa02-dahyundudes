@@ -13,16 +13,16 @@ public:
     /**
      * Default Constructor
      */
-    SelectionSort() : Sort<T>() {};
+    SelectionSort();
     /**
      * Copy Constructor
      */
-    SelectionSort(const Sort<T>& s) : Sort<T>(s) {};
+    SelectionSort(const Sort<T>&);
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    SelectionSort(T* s) : Sort<T>(s) {};
+    SelectionSort(const T* s);
 
     /**
      * Sorts the data array using SelectionSort and returns the result
@@ -30,6 +30,21 @@ public:
      */
     T* sort() override;
 };
+
+template <class T>
+SelectionSort<T>::SelectionSort() : Sort<T>() {
+
+}
+
+template <class T>
+SelectionSort<T>::SelectionSort(const Sort<T>& s) : Sort<T>(s) {
+
+}
+
+template <class T>
+SelectionSort<T>::SelectionSort(const T* s) : Sort<T>(s) {
+
+}
 
 template <class T>
 T* SelectionSort<T>::sort() {

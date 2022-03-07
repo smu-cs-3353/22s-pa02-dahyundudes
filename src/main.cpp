@@ -35,13 +35,13 @@ int main(int argc, char** argv) {
             cout << temp[i] << ",";
         }
         cout << endl;
-        /*
         Sort<int>* select = new SelectionSort<int>(temp);
         result = select->sort();
         for (int i = 0; i < sizeof(result); i++) {
             cout << result[i] << ",";
         }
         cout << endl;
+        /*
         InsertionSort<int>* insert = new InsertionSort<int>(temp);
         result = insert->sort();
         for (int i = 0; i < sizeof(result); i++) {

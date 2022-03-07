@@ -22,7 +22,7 @@ public:
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    Sort(T*);
+    Sort(const T*);
     /**
      * Destructor
      */
