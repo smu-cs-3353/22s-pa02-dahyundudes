@@ -15,7 +15,9 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="345fd9b2-c6de-414c-940a-1122e0b89a62" name="Changes" comment="" />
+    <list default="true" id="345fd9b2-c6de-414c-940a-1122e0b89a62" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,9 +47,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="RunManager" selected="CMake Application.pa02">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="pa02" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="22s_pa02" TARGET_NAME="pa02" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="22s_pa02" RUN_TARGET_NAME="pa02">
@@ -79,6 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646241184711</updated>
       <workItem from="1646241188766" duration="1150000" />
+      <workItem from="1646685087314" duration="3000" />
     </task>
     <servers />
   </component>
