@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
         }
 
         int* result;
-
+        cout << "Original list:  ";
         for (int i = 0; i < 10; i++) {
             cout << temp[i] << ",";
         }
@@ -40,6 +40,7 @@ int main(int argc, char** argv) {
 
         Sort<int>* select = new SelectionSort<int>(temp, size);
         result = select->sort();
+        cout << "Selection Sort: ";
         for (int i = 0; i < 10; i++) {
             cout << result[i] << ",";
         }
@@ -47,6 +48,7 @@ int main(int argc, char** argv) {
 
         Sort<int>* insert = new InsertionSort<int>(temp, size);
         result = insert->sort();
+        cout << "Insertion Sort: ";
         for (int i = 0; i < size; i++) {
             cout << result[i] << ",";
         }
@@ -54,17 +56,23 @@ int main(int argc, char** argv) {
 
         Sort<int>* quick = new QuickSort<int>(temp, size);
         result = quick->sort();
+        cout << "Quick Sort:     ";
         for (int i = 0; i < size; i++) {
             cout << result[i] << ",";
         }
         cout << endl;
 
-//        Sort<int>* shell = new ShellSort<int>(temp, size);
-//        result = shell->sort();
-//        for (int i = 0; i < size; i++) {
-//            cout << result[i] << ",";
-//        }
-//        cout << endl;
+        Sort<int>* shell = new ShellSort<int>(temp, size);
+        result = shell->sort();
+        cout << "Shell Sort:     ";
+        for (int i = 0; i < size; i++) {
+            cout << result[i] << ",";
+        }
+        cout << endl;
+
+        //TODO: merge sort
+        //TODO: introsort
+        //TODO: timsort
 
 //    }
 }
