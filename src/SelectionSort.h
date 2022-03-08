@@ -48,22 +48,22 @@ SelectionSort<T>::SelectionSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* SelectionSort<T>::sort() {
-//    SelectionSort<T> temp(this->data, this->size);
+    static SelectionSort<T> temp(this->data, this->size);
     int minIndex = 0;
 //    T min = this->data[0];
-    for (int i = 0; i < this->size; i++) {
-        T min = this->data[minIndex];
-        for (int j = i+1; j < this->size; j++)
-            if (this->data[j] < min) {
+    for (int i = 0; i < temp.size; i++) {
+        minIndex = i;
+        T min = temp.data[minIndex];
+        for (int j = i+1; j < temp.size; j++)
+            if (temp.data[j] < min) {
                 minIndex = j;
-                min = this->data[j];
+                min = temp.data[j];
             }
         T val = min;
-        this->data[minIndex] = this->data[i];
-        this->data[i] = val;
-        minIndex = i+1;
+        temp.data[minIndex] = temp.data[i];
+        temp.data[i] = val;
     }
-    return this->data;
+    return temp.data;
 }
 
 #endif //INC_22S_PA02_SELECTIONSORT_H
