@@ -9,6 +9,7 @@
 #include "SelectionSort.h"
 #include "InsertionSort.h"
 #include "QuickSort.h"
+#include "ShellSort.h"
 
 using namespace std;
 
@@ -51,12 +52,19 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        /*QuickSort<int>* quick = new QuickSort<int>(temp);
+        Sort<int>* quick = new QuickSort<int>(temp, size);
         result = quick->sort();
-        for (int i = 0; i < sizeof(result); i++) {
+        for (int i = 0; i < size; i++) {
             cout << result[i] << ",";
         }
         cout << endl;
-        */
+
+//        Sort<int>* shell = new ShellSort<int>(temp, size);
+//        result = shell->sort();
+//        for (int i = 0; i < size; i++) {
+//            cout << result[i] << ",";
+//        }
+//        cout << endl;
+
 //    }
 }

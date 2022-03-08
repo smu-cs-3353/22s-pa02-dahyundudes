@@ -6,6 +6,7 @@
 #define INC_22S_PA02_QUICKSORT_H
 
 #include "Sort.h"
+#include "random"
 
 template <class T>
 class QuickSort : public Sort<T> {
@@ -22,11 +23,11 @@ public:
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    QuickSort(T*);
+    QuickSort(const T*, int);
     /**
      * Destructor
      */
-    ~QuickSort();
+//    ~QuickSort();
 
     /**
      * Sorts the data array using QuickSort and returns the result
@@ -40,38 +41,39 @@ public:
 };
 
 template <class T>
-QuickSort<T>::QuickSort() {
-    this->data = nullptr;
+QuickSort<T>::QuickSort() : Sort<T>(){
+//    this->data = nullptr;
 }
 
 template <class T>
-QuickSort<T>::QuickSort(const Sort<T>& other) {
-    if (sizeof(other.data) > 0) {
-        this->data = new T[sizeof(other.data)];
-        for (int i = 0; i < sizeof(other.data); i++)
-            this->data[i] = other.data[i];
-    }
+QuickSort<T>::QuickSort(const Sort<T>& other) : Sort<T>(other){
+//    if (sizeof(other.data) > 0) {
+//        this->data = new T[sizeof(other.data)];
+//        for (int i = 0; i < sizeof(other.data); i++)
+//            this->data[i] = other.data[i];
+//    }
 }
 
 template <class T>
-QuickSort<T>::QuickSort(T* other) {
-    if (sizeof(other > 0)) {
-        this->data = new T[sizeof(other)];
-        for (int i = 0; i < sizeof(other); i++)
-            this->data[i] = other[i];
-    }
+QuickSort<T>::QuickSort(const T* other, int size) : Sort<T>(other, size){
+//    if (sizeof(other > 0)) {
+//        this->data = new T[sizeof(other)];
+//        for (int i = 0; i < sizeof(other); i++)
+//            this->data[i] = other[i];
+//    }
 }
 
-template <class T>
-QuickSort<T>::~QuickSort() {
-    if (this->data != nullptr)
-        delete[] this->data;
-}
+//template <class T>
+//QuickSort<T>::~QuickSort() {
+//    if (this->data != nullptr)
+//        delete[] this->data;
+//}
 
 template <class T>
 T* QuickSort<T>::sort() {
-    QuickSort<T> temp(this->data);
-    return sortHelp(temp.data, 0, sizeof(temp.data));
+    static QuickSort<T> temp(this->data, this->size);
+    sortHelp(temp.data, 0, temp.size-1);
+    return temp.data;
 }
 
 template <class T>
@@ -82,17 +84,23 @@ T* QuickSort<T>::sortHelp(T* temp, int low, int high) {
         sortHelp(temp, low, pivot - 1);
         sortHelp(temp, pivot + 1, high);
     }
-    else
+    else {
         return temp;
+    }
+
 }
 
 template <class T>
 int QuickSort<T>::partition(T* temp, int low, int high) {
-    int pivot = temp[high];
+    srand(time(nullptr));
+    int pivot = low + rand() % (high - low);
     int i = (low - 1);
 
+    std::swap(temp[pivot], temp[high]);
+    pivot = high;
+
     for (int j = low; j <= high - 1; j++) {
-        if (temp[j] <= pivot) {
+        if (temp[j] <= temp[pivot]) {
             i++;
             T val = temp[i];
             temp[i] = temp[j];
