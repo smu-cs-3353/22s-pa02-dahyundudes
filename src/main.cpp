@@ -10,6 +10,7 @@
 #include "InsertionSort.h"
 #include "QuickSort.h"
 #include "ShellSort.h"
+#include "MergeSort.h"
 
 using namespace std;
 
@@ -70,7 +71,14 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        //TODO: merge sort
+        Sort<int>* merge = new MergeSort<int>(temp, size);
+        result = merge->sort();
+        cout << "Merge Sort:     ";
+        for(int i = 0; i < size; i++) {
+                cout << result[i] << ",";
+        }
+        cout << endl;
+
         //TODO: introsort
         //TODO: timsort
 

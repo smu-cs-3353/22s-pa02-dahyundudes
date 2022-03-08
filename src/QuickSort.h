@@ -42,25 +42,17 @@ public:
 
 template <class T>
 QuickSort<T>::QuickSort() : Sort<T>(){
-//    this->data = nullptr;
+
 }
 
 template <class T>
 QuickSort<T>::QuickSort(const Sort<T>& other) : Sort<T>(other){
-//    if (sizeof(other.data) > 0) {
-//        this->data = new T[sizeof(other.data)];
-//        for (int i = 0; i < sizeof(other.data); i++)
-//            this->data[i] = other.data[i];
-//    }
+
 }
 
 template <class T>
 QuickSort<T>::QuickSort(const T* other, int size) : Sort<T>(other, size){
-//    if (sizeof(other > 0)) {
-//        this->data = new T[sizeof(other)];
-//        for (int i = 0; i < sizeof(other); i++)
-//            this->data[i] = other[i];
-//    }
+
 }
 
 //template <class T>
