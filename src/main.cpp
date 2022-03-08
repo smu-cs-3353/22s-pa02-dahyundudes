@@ -11,6 +11,7 @@
 #include "QuickSort.h"
 #include "ShellSort.h"
 #include "MergeSort.h"
+#include "IntroSort.h"
 
 using namespace std;
 
@@ -79,7 +80,15 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        //TODO: introsort
+
+        Sort<int>* intro = new IntroSort<int>(temp, size);
+        result = intro->sort();
+        cout << "Intro Sort:     ";
+        for(int i = 0; i < size; i++) {
+                cout << result[i] << ",";
+        }
+        cout << endl;
+
         //TODO: timsort
 
 //    }
