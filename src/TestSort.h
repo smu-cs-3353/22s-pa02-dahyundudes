@@ -51,7 +51,7 @@ TestSort<T>::TestSort(const Sort<T>& other) {
 
 template <class T>
 TestSort<T>::TestSort(T* other) {
-    if (sizeof(other > 0)) {
+    if (sizeof(other) > 0) {
         this->data = new T[sizeof(other)];
         for (int i = 0; i < sizeof(other); i++)
             this->data[i] = other[i];

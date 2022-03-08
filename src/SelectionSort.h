@@ -22,7 +22,7 @@ public:
      * Overloaded Constructor
      * @param T* array of templated elements
      */
-    SelectionSort(const T* s);
+    SelectionSort(const T* s, int c);
 
     /**
      * Sorts the data array using SelectionSort and returns the result
@@ -42,17 +42,17 @@ SelectionSort<T>::SelectionSort(const Sort<T>& s) : Sort<T>(s) {
 }
 
 template <class T>
-SelectionSort<T>::SelectionSort(const T* s) : Sort<T>(s) {
+SelectionSort<T>::SelectionSort(const T* s, int c) : Sort<T>(s, c) {
 
 }
 
 template <class T>
 T* SelectionSort<T>::sort() {
-    SelectionSort<T> temp(this->data);
+    SelectionSort<T> temp(this->data, this->size);
     int minIndex = 0;
     T* min = &temp.data[0];
-    for (int i = 0; i < sizeof(temp.data); i++) {
-        for (int j = i; j < sizeof(temp.data); j++)
+    for (int i = 0; i < temp.size; i++) {
+        for (int j = i; j < temp.size; j++)
             if (temp.data[j] < *min) {
                 minIndex = j;
                 min = &temp.data[j];

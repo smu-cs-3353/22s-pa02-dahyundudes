@@ -13,9 +13,9 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    if (argc == 1)
-        cout << "No arguments provided." << endl;
-    else {
+//    if (argc == 1)
+//        cout << "No arguments provided." << endl;
+//    else {
         cout << "Hello CS3353, your arguments were: ";
         for (int i = 1; i < argc; i++) {
             cout << argv[i];
@@ -25,19 +25,21 @@ int main(int argc, char** argv) {
         cout << endl;
 
         int* temp = new int[10];
+        int size = 10;
         for (int i = 0; i < 10; i++) {
             temp[9 - i] = i;
         }
 
         int* result;
 
-        for (int i = 0; i < sizeof(temp); i++) {
+        for (int i = 0; i < 10; i++) {
             cout << temp[i] << ",";
         }
         cout << endl;
-        Sort<int>* select = new SelectionSort<int>(temp);
+
+        Sort<int>* select = new SelectionSort<int>(temp, size);
         result = select->sort();
-        for (int i = 0; i < sizeof(result); i++) {
+        for (int i = 0; i < 10; i++) {
             cout << result[i] << ",";
         }
         cout << endl;
@@ -55,5 +57,5 @@ int main(int argc, char** argv) {
         }
         cout << endl;
         */
-    }
+//    }
 }
