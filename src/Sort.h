@@ -56,16 +56,12 @@ Sort<T>::Sort(const Sort<T> &other) {
 
 template<class T>
 Sort<T>::Sort(const T *other, int s) {
-    std::cout << "raw size" << s << std::endl;
     if (s > 0) {
         this->size = s;
-        std::cout << "new size" << this->size << std::endl;
         this->data = new T[this->size];
         for (int i = 0; i < this->size; i++) {
             this->data[i] = other[i];
-            std::cout << this->data[i] << ", ";
         }
-        std::cout << std::endl;
     }
 }
 

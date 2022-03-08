@@ -43,14 +43,15 @@ int main(int argc, char** argv) {
             cout << result[i] << ",";
         }
         cout << endl;
-        /*
-        InsertionSort<int>* insert = new InsertionSort<int>(temp);
+
+        Sort<int>* insert = new InsertionSort<int>(temp, size);
         result = insert->sort();
-        for (int i = 0; i < sizeof(result); i++) {
+        for (int i = 0; i < size; i++) {
             cout << result[i] << ",";
         }
         cout << endl;
-        QuickSort<int>* quick = new QuickSort<int>(temp);
+
+        /*QuickSort<int>* quick = new QuickSort<int>(temp);
         result = quick->sort();
         for (int i = 0; i < sizeof(result); i++) {
             cout << result[i] << ",";
