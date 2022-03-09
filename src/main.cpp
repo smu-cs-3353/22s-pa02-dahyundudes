@@ -12,6 +12,7 @@
 #include "ShellSort.h"
 #include "MergeSort.h"
 #include "IntroSort.h"
+#include "TimSort.h"
 
 using namespace std;
 
@@ -89,7 +90,14 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        //TODO: timsort
+        Sort<int>* tim = new TimSort<int>(temp, size);
+        result = tim->sort();
+        cout << "Tim Sort:       ";
+        for(int i = 0; i < size; i++) {
+            cout << result[i] << ",";
+        }
+        cout << endl;
+
 
 //    }
 }

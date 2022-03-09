@@ -75,7 +75,7 @@ void IntroSort<T>::sortHelp(T* arr, int begin, int end, int depth) {
 
     if(depth == 0) {
         T* t = arr + end;
-        std::make_heap(arr+begin, t+1);   //TODO: implement heap sort
+        std::make_heap(arr+begin, t+1);   //TODO: implement heap sort, not sure if required
         std::sort_heap(arr+begin, t+1);
         return;
     }

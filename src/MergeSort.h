@@ -100,8 +100,16 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
         arrIndex++;
     }
 
-    delete[] leftArr;
-    delete[] rightArr;
+    if(leftArrSize != 0)
+        delete[] leftArr;
+    if(rightArrSize != 0)
+        delete[] rightArr;
+
+//    delete[] leftArr;
+//    delete[] rightArr;
+    /// ^^gave error when testing other lists soo...
+
+
 
     ///if somethings doesnt work its bc of this commented out code-- so lmk so i can fix
 //    while(leftIndex < leftArrSize) {
