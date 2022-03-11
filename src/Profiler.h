@@ -46,8 +46,29 @@ public:
      * @param int the number of sort to test
      * @return double the time the sort took
      */
-    double* sortDataset(int);
+    double sortDataset(int);
 };
 
+template <class T>
+Profiler<T>::Profiler() {
+    arr = new T[0];
+    size = 0;
+}
+
+template <class T>
+Profiler<T>::Profiler(T*& arr, int size) {
+    this->arr = arr;
+    this->size = size;
+}
+
+template <class T>
+double* Profiler<T>::sortDatasets() {
+
+}
+
+template <class T>
+double Profiler<T>::sortDataset(int i) {
+    
+}
 
 #endif //INC_22S_PA02_PROFILER_H
