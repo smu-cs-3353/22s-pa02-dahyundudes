@@ -52,7 +52,7 @@ T* ShellSort<T>::sort() {
 
     for (int gap = temp.size/2; gap > 0; gap /= 2) {
         for (int i = gap; i < temp.size; i += 1) {
-            int val = temp.data[i];
+            T val = temp.data[i];
             int j = i;
             while(j >= gap && temp.data[j - gap] > val) {
                 temp.data[j] = temp.data[j - gap];

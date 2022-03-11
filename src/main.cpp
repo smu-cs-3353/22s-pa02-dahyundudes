@@ -5,7 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
-#include "Profiler.h"
+#include "Runner.h"
 
 using namespace std;
 
@@ -21,21 +21,13 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        int size = 10000;
-
-        int* temp = new int[size];
-        for (int i = 0; i < size; i++) {
-            temp[size-1 - i] = i;
+        Runner r;
+        for (int i = 1; i < argc; i++) {
+            string fileName(argv[i]);
+            r.readFile(argv[i]);
+            ofstream out(fileName.substr(0,fileName.size()-4)+"_out.txt");
+            r.sortInt(out);
+            r.sortString(out);
         }
-
-        int* result;
-        cout << "Original list: ";
-        for (int i = 0; i < size; i++) {
-            cout << temp[i] << ",";
-        }
-        cout << endl;
-
-        Profiler<int> p(temp, size);
-        chrono::duration<double>* times = p.sortDatasets();
 //    }
 }
