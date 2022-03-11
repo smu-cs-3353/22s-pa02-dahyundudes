@@ -8,137 +8,165 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pa02_test">
-				<Option output="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/pa02_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option output="/tmp/tmp.c91nNDmX5c/cmake-build-debug/pa02_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02_test"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02_test"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pa02_test/fast">
-				<Option output="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/pa02_test" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option output="/tmp/tmp.c91nNDmX5c/cmake-build-debug/pa02_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02_test/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02_test/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pa02">
-				<Option output="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/pa02" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option output="/tmp/tmp.c91nNDmX5c/cmake-build-debug/pa02" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="pa02/fast">
-				<Option output="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/pa02" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
+				<Option output="/tmp/tmp.c91nNDmX5c/cmake-build-debug/pa02" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/tmp/tmp.c91nNDmX5c/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/12.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 pa02/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/tmp/tmp.c91nNDmX5c/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/Sort.h">
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/InsertionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/IntroSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/MergeSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/QuickSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/SelectionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/ShellSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/Sort.h">
 			<Option target="pa02_test"/>
 			<Option target="pa02"/>
 		</Unit>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/catch_setup.cpp">
-			<Option target="pa02_test"/>
-		</Unit>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/catch_setup.h">
-			<Option target="pa02_test"/>
-		</Unit>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/main.cpp">
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/TestSort.h">
 			<Option target="pa02"/>
 		</Unit>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/test.cpp">
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/TimSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/catch_setup.cpp">
 			<Option target="pa02_test"/>
 		</Unit>
-		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/CMakeLists.txt">
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/catch_setup.h">
+			<Option target="pa02_test"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/main.cpp">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/src/test.cpp">
+			<Option target="pa02_test"/>
+		</Unit>
+		<Unit filename="/tmp/tmp.c91nNDmX5c/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
