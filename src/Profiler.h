@@ -200,7 +200,8 @@ chrono::duration<double> Profiler<T>::sortDataset(int i) {
             timingData = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
             cout << "Tim sort took " << timingData.count() << " seconds." << endl << endl;
             break;
-        default: cout << "Invalid choice." << endl;
+        default:
+            cout << "Invalid choice." << endl;
     }
     return timingData;
 }
