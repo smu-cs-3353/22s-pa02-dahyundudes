@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/pa02_test.dir/src/catch_setup.cpp.o CMakeFiles/pa02_test.dir/src/test.cpp.o  -o pa02_test 
+/Library/Developer/CommandLineTools/usr/bin/c++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/pa02_test.dir/src/catch_setup.cpp.o CMakeFiles/pa02_test.dir/src/test.cpp.o -o pa02_test 
