@@ -37,5 +37,5 @@ int main(int argc, char** argv) {
 
         Profiler<int> p(temp, size);
         chrono::duration<double>* times = p.sortDatasets();
-//    }
+    }
 }

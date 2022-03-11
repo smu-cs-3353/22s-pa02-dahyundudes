@@ -64,11 +64,11 @@ template <class T>
 Profiler<T>::Profiler(T* arr, int size) {
     this->arr = arr;
     this->size = size;
-<<<<<<< HEAD
-=======
+//<<<<<<< HEAD
+//=======
 //    if (this->size > sizeof(this->arr)/sizeof(this->arr[0]))
 //        this->size = sizeof(this->arr)/sizeof(this->arr[0]);
->>>>>>> 2f3421fac3229311b50649fa6993b113a8b22804
+//>>>>>>> 2f3421fac3229311b50649fa6993b113a8b22804
 }
 
 template <class T>

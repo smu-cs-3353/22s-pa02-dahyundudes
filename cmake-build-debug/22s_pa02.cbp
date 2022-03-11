@@ -131,6 +131,9 @@
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/MergeSort.h">
 			<Option target="pa02"/>
 		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/Profiler.h">
+			<Option target="pa02"/>
+		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/QuickSort.h">
 			<Option target="pa02"/>
 		</Unit>
