@@ -78,14 +78,23 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
 
     int leftArrSize = mid - left + 1;
     int rightArrSize = right - mid;
+    std::cout << leftArrSize << " <-> " << rightArrSize << std::endl;
 
     T* leftArr = new T[leftArrSize];
     T* rightArr = new T[rightArrSize];
 
-    for(int i = 0; i < leftArrSize; i++)
+    for(int i = 0; i < leftArrSize; i++) {
+        std::cout << arr[left+i] << ',';
         leftArr[i] = arr[left + i];
-    for(int i = 0; i < rightArrSize; i++)
+    }
+    std::cout << std::endl;
+    for(int i = 0; i < rightArrSize; i++){
+        std::cout << arr[mid+1+i] << ',';
         rightArr[i] = arr[mid + 1 + i];
+
+    }
+    std::cout << std::endl;
+
 
 
     int leftIndex = 0, rightIndex = 0, arrIndex = left;
@@ -100,6 +109,7 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
         arrIndex++;
     }
 
+    std::cout << "kachow" << std::endl;
     if(leftArrSize != 0)
         delete[] leftArr;
     if(rightArrSize != 0)

@@ -5,7 +5,7 @@
 		<Option title="22s_pa02"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\data\;CMake Files\data\100_sets\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/cmake-build-debug"/>
@@ -122,8 +122,38 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/DatasetTesting.cpp">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/DatasetTesting.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/InsertionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/IntroSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/MergeSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/QuickSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/SelectionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/ShellSort.h">
+			<Option target="pa02"/>
+		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/Sort.h">
 			<Option target="pa02_test"/>
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/TestSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/TimSort.h">
 			<Option target="pa02"/>
 		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/catch_setup.cpp">
@@ -140,6 +170,9 @@
 		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/data/100_sets/random_noDup.txt">
+			<Option virtualFolder="CMake Files\data\100_sets\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

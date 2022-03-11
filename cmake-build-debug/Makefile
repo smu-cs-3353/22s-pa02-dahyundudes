@@ -142,6 +142,30 @@ pa02/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pa02.dir/build.make CMakeFiles/pa02.dir/build
 .PHONY : pa02/fast
 
+src/DatasetTesting.o: src/DatasetTesting.cpp.o
+.PHONY : src/DatasetTesting.o
+
+# target to build an object file
+src/DatasetTesting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pa02.dir/build.make CMakeFiles/pa02.dir/src/DatasetTesting.cpp.o
+.PHONY : src/DatasetTesting.cpp.o
+
+src/DatasetTesting.i: src/DatasetTesting.cpp.i
+.PHONY : src/DatasetTesting.i
+
+# target to preprocess a source file
+src/DatasetTesting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pa02.dir/build.make CMakeFiles/pa02.dir/src/DatasetTesting.cpp.i
+.PHONY : src/DatasetTesting.cpp.i
+
+src/DatasetTesting.s: src/DatasetTesting.cpp.s
+.PHONY : src/DatasetTesting.s
+
+# target to generate assembly for a file
+src/DatasetTesting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/pa02.dir/build.make CMakeFiles/pa02.dir/src/DatasetTesting.cpp.s
+.PHONY : src/DatasetTesting.cpp.s
+
 src/catch_setup.o: src/catch_setup.cpp.o
 .PHONY : src/catch_setup.o
 
@@ -224,6 +248,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... pa02"
 	@echo "... pa02_test"
+	@echo "... src/DatasetTesting.o"
+	@echo "... src/DatasetTesting.i"
+	@echo "... src/DatasetTesting.s"
 	@echo "... src/catch_setup.o"
 	@echo "... src/catch_setup.i"
 	@echo "... src/catch_setup.s"
