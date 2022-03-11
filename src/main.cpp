@@ -19,15 +19,21 @@ int main(int argc, char** argv) {
             if (i < argc - 1)
                 cout << ", ";
         }
-        cout << endl;
+        cout << endl << endl;
 
         Runner r;
         for (int i = 1; i < argc; i++) {
+            cout << argv[i] << endl;
             string fileName(argv[i]);
             r.readFile(argv[i]);
-            ofstream out(fileName.substr(0,fileName.size()-4)+"_out.txt");
+            ofstream out(fileName.substr(0,fileName.size()-4)+"_out.csv");
+            out << fixed << setprecision(7);
+            cout << endl;
+            cout << "Int Sort: " << endl;
             r.sortInt(out);
+            cout << "String Sort: " << endl;
             r.sortString(out);
+            cout << endl;
         }
 //    }
 }

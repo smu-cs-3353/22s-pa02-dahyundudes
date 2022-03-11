@@ -30,9 +30,9 @@ void Runner::readFile(string filePath) {
 
 void Runner::sortInt(ofstream& out) {
     auto* time = pInt.sortDatasets();
-    for (int i = 0; i < sizeof(time); i++) {
+    for (int i = 0; i < 7; i++) {
         out << time[i].count();
-        if (i < sizeof(time) - 1)
+        if (i < 6)
             out << ",";
     }
     out << endl;
@@ -40,9 +40,9 @@ void Runner::sortInt(ofstream& out) {
 
 void Runner::sortString(ofstream& out) {
     auto* time = pString.sortDatasets();
-    for (int i = 0; i < sizeof(time); i++) {
+    for (int i = 0; i < 7; i++) {
         out << time[i].count();
-        if (i < sizeof(time) - 1)
+        if (i < 6)
             out << ",";
     }
     out << endl;

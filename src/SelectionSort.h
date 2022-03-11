@@ -50,7 +50,6 @@ template <class T>
 T* SelectionSort<T>::sort() {
     static SelectionSort<T> temp(this->data, this->size);
     int minIndex = 0;
-//    T min = this->data[0];
     for (int i = 0; i < temp.size; i++) {
         minIndex = i;
         T min = temp.data[minIndex];
