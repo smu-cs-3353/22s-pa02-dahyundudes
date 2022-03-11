@@ -13,7 +13,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89a74fba-187e-44c8-8cee-89cea0e3f905" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Profiler.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profiler.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profiler.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +97,7 @@
       <workItem from="1646669444306" duration="907000" />
       <workItem from="1646671099693" duration="985000" />
       <workItem from="1646686137755" duration="32000" />
-      <workItem from="1646967078406" duration="1682000" />
+      <workItem from="1646967078406" duration="1705000" />
     </task>
     <servers />
   </component>
