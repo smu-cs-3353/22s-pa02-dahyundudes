@@ -122,8 +122,32 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/InsertionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/IntroSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/MergeSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/QuickSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/SelectionSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/ShellSort.h">
+			<Option target="pa02"/>
+		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/Sort.h">
 			<Option target="pa02_test"/>
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/TestSort.h">
+			<Option target="pa02"/>
+		</Unit>
+		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/TimSort.h">
 			<Option target="pa02"/>
 		</Unit>
 		<Unit filename="/Users/danielryan/Desktop/CS3353/22s-pa02-dahyundudes/src/catch_setup.cpp">
