@@ -21,7 +21,7 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        int size = 100;
+        int size = 10000;
 
         int* temp = new int[size];
         for (int i = 0; i < size; i++) {
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
         }
 
         int* result;
-        cout << "Original list:  ";
+        cout << "Original list: ";
         for (int i = 0; i < size; i++) {
             cout << temp[i] << ",";
         }
