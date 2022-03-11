@@ -6,6 +6,8 @@
 #define INC_22S_PA02_RUNNER_H
 
 #include <fstream>
+#include <iostream>
+#include <cstring>
 
 #include "Profiler.h"
 

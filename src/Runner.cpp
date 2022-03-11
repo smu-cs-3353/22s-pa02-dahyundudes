@@ -5,7 +5,8 @@
 #include "Runner.h"
 
 Runner::Runner() {
-
+    pInt = nullptr;
+    pString = nullptr;
 }
 
 Runner::~Runner() {
@@ -33,6 +34,10 @@ void Runner::readFile(string filePath) {
         arrInt[i] = atoi(temp);
     }
 
+    if (pString != nullptr)
+        delete pString;
+    if (pInt != nullptr)
+        delete pInt;
     pString = new Profiler<string>(arrString, size);
     pInt = new Profiler<int>(arrInt, size);
     delete[] arrString;
@@ -41,7 +46,7 @@ void Runner::readFile(string filePath) {
 }
 
 void Runner::sortInt(ofstream& out) {
-    auto* time = pInt->sortDatasets();
+    double* time = pInt->sortDatasets();
     for (int i = 0; i < 7; i++) {
         out << time[i];
         if (i < 6)
@@ -52,7 +57,7 @@ void Runner::sortInt(ofstream& out) {
 }
 
 void Runner::sortString(ofstream& out) {
-    auto* time = pString->sortDatasets();
+    double* time = pString->sortDatasets();
     for (int i = 0; i < 7; i++) {
         out << time[i];
         if (i < 6)
