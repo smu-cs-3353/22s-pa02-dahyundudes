@@ -5,14 +5,7 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
-#include "Sort.h"
-#include "SelectionSort.h"
-#include "InsertionSort.h"
-#include "QuickSort.h"
-#include "ShellSort.h"
-#include "MergeSort.h"
-#include "IntroSort.h"
-#include "TimSort.h"
+#include "Profiler.h"
 
 using namespace std;
 
@@ -41,63 +34,7 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        Sort<int>* select = new SelectionSort<int>(temp, size);
-        result = select->sort();
-        cout << "Selection Sort: ";
-        for (int i = 0; i < 10; i++) {
-            cout << result[i] << ",";
-        }
-        cout << endl;
-
-        Sort<int>* insert = new InsertionSort<int>(temp, size);
-        result = insert->sort();
-        cout << "Insertion Sort: ";
-        for (int i = 0; i < size; i++) {
-            cout << result[i] << ",";
-        }
-        cout << endl;
-
-        Sort<int>* quick = new QuickSort<int>(temp, size);
-        result = quick->sort();
-        cout << "Quick Sort:     ";
-        for (int i = 0; i < size; i++) {
-            cout << result[i] << ",";
-        }
-        cout << endl;
-
-        Sort<int>* shell = new ShellSort<int>(temp, size);
-        result = shell->sort();
-        cout << "Shell Sort:     ";
-        for (int i = 0; i < size; i++) {
-            cout << result[i] << ",";
-        }
-        cout << endl;
-
-        Sort<int>* merge = new MergeSort<int>(temp, size);
-        result = merge->sort();
-        cout << "Merge Sort:     ";
-        for(int i = 0; i < size; i++) {
-                cout << result[i] << ",";
-        }
-        cout << endl;
-
-
-        Sort<int>* intro = new IntroSort<int>(temp, size);
-        result = intro->sort();
-        cout << "Intro Sort:     ";
-        for(int i = 0; i < size; i++) {
-                cout << result[i] << ",";
-        }
-        cout << endl;
-
-        Sort<int>* tim = new TimSort<int>(temp, size);
-        result = tim->sort();
-        cout << "Tim Sort:       ";
-        for(int i = 0; i < size; i++) {
-            cout << result[i] << ",";
-        }
-        cout << endl;
-
-
+        Profiler<int> p(temp, 10);
+        double* times = p.sortDatasets();
 //    }
 }
