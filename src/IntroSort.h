@@ -7,6 +7,9 @@
 
 #include "Sort.h"
 #include <random>
+#include <algorithm>
+
+using namespace std;
 
 template <class T>
 class IntroSort : public Sort<T> {

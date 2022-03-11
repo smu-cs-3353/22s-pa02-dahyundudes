@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/IntroSort.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntroSort.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Profiler.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Profiler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sort.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sort.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +101,7 @@
       <workItem from="1646669444306" duration="907000" />
       <workItem from="1646671099693" duration="985000" />
       <workItem from="1646686137755" duration="32000" />
-      <workItem from="1646967078406" duration="2707000" />
+      <workItem from="1646967078406" duration="3810000" />
     </task>
     <servers />
   </component>

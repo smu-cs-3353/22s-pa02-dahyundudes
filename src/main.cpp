@@ -21,20 +21,21 @@ int main(int argc, char** argv) {
         }
         cout << endl;
 
-        int* temp = new int[10];
-        int size = 10;
-        for (int i = 0; i < 10; i++) {
-            temp[9 - i] = i;
+        int size = 100;
+
+        int* temp = new int[size];
+        for (int i = 0; i < size; i++) {
+            temp[size-1 - i] = i;
         }
 
         int* result;
         cout << "Original list:  ";
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < size; i++) {
             cout << temp[i] << ",";
         }
         cout << endl;
 
-        Profiler<int> p(temp, 10);
-        double* times = p.sortDatasets();
+        Profiler<int> p(temp, size);
+        chrono::duration<double>* times = p.sortDatasets();
 //    }
 }

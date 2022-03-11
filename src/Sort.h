@@ -7,10 +7,9 @@
 
 template <class T>
 class Sort {
-protected:
+public:
     T* data;
     int size;
-public:
     /**
      * Default Constructor
      */
