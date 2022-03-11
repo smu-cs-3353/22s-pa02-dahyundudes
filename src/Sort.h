@@ -66,8 +66,7 @@ Sort<T>::Sort(const T *other, int s) {
 
 template<class T>
 Sort<T>::~Sort() {
-    if (this->data != nullptr)
-        delete[] this->data;
+    delete[] this->data;
 }
 
 template<class T>

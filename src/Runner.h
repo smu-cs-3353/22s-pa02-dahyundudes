@@ -6,14 +6,20 @@
 #define INC_22S_PA02_RUNNER_H
 
 #include <fstream>
+#include <iostream>
+#include <cstring>
 
 #include "Profiler.h"
 
 class Runner {
 private:
-    Profiler<int> pInt;
-    Profiler<string> pString;
+    Profiler<int>* pInt;
+    Profiler<string>* pString;
 public:
+    Runner();
+
+    ~Runner();
+
     void readFile(string);
 
     void sortInt(ofstream&);

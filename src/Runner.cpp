@@ -4,6 +4,16 @@
 
 #include "Runner.h"
 
+Runner::Runner() {
+    pInt = nullptr;
+    pString = nullptr;
+}
+
+Runner::~Runner() {
+    delete pString;
+    delete pInt;
+}
+
 void Runner::readFile(string filePath) {
     ifstream file(filePath);
     if (!file.is_open()) {
@@ -24,26 +34,35 @@ void Runner::readFile(string filePath) {
         arrInt[i] = atoi(temp);
     }
 
-    pString = Profiler<string>(arrString, size);
-    pInt = Profiler<int>(arrInt, size);
+    if (pString != nullptr)
+        delete pString;
+    if (pInt != nullptr)
+        delete pInt;
+    pString = new Profiler<string>(arrString, size);
+    pInt = new Profiler<int>(arrInt, size);
+    delete[] arrString;
+    delete[] arrInt;
+    file.close();
 }
 
 void Runner::sortInt(ofstream& out) {
-    auto* time = pInt.sortDatasets();
+    double* time = pInt->sortDatasets();
     for (int i = 0; i < 7; i++) {
-        out << time[i].count();
+        out << time[i];
         if (i < 6)
             out << ",";
     }
     out << endl;
+    delete[] time;
 }
 
 void Runner::sortString(ofstream& out) {
-    auto* time = pString.sortDatasets();
+    double* time = pString->sortDatasets();
     for (int i = 0; i < 7; i++) {
-        out << time[i].count();
+        out << time[i];
         if (i < 6)
             out << ",";
     }
     out << endl;
+    delete[] time;
 }
