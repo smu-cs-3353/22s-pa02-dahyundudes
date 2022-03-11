@@ -24,6 +24,7 @@ public:
      */
     MergeSort(const T* s, int c);
 
+
     /**
      * Sorts the data array using SelectionSort and returns the result
      * @return T* array of templated elements
@@ -78,38 +79,41 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
 
     int leftArrSize = mid - left + 1;
     int rightArrSize = right - mid;
-    std::cout << leftArrSize << " <-> " << rightArrSize << std::endl;
 
     T* leftArr = new T[leftArrSize];
     T* rightArr = new T[rightArrSize];
 
     for(int i = 0; i < leftArrSize; i++) {
-        std::cout << arr[left+i] << ',';
         leftArr[i] = arr[left + i];
     }
-    std::cout << std::endl;
+
+
     for(int i = 0; i < rightArrSize; i++){
-        std::cout << arr[mid+1+i] << ',';
         rightArr[i] = arr[mid + 1 + i];
 
     }
-    std::cout << std::endl;
 
 
 
     int leftIndex = 0, rightIndex = 0, arrIndex = left;
     while(leftIndex < leftArrSize || rightIndex < rightArrSize) {
-        if(rightIndex == rightArrSize || leftArr[leftIndex] <= rightArr[rightIndex]) {
+        if(rightIndex == rightArrSize) {
+            arr[arrIndex] = leftArr[leftIndex];
+            leftIndex++;
+        } else if(leftIndex == leftArrSize) {
+            arr[arrIndex] = rightArr[rightIndex];
+            rightIndex++;
+        } else if(leftArr[leftIndex] <= rightArr[rightIndex]) {
             arr[arrIndex] = leftArr[leftIndex];
             leftIndex++;
         } else {
             arr[arrIndex] = rightArr[rightIndex];
             rightIndex++;
+
         }
         arrIndex++;
     }
 
-    std::cout << "kachow" << std::endl;
     if(leftArrSize != 0)
         delete[] leftArr;
     if(rightArrSize != 0)
