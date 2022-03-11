@@ -38,6 +38,8 @@ public:
      */
     Profiler(T*, int);
 
+    ~Profiler();
+
     /**
      * Sort the dataset using each sort and return an array of times
      *
@@ -62,19 +64,23 @@ Profiler<T>::Profiler() {
 
 template <class T>
 Profiler<T>::Profiler(T* arr, int size) {
-    this->arr = arr;
+    this->arr = new T[size];
+    for (int i = 0; i < size; i++)
+        this->arr[i] = arr[i];
     this->size = size;
+}
+
+template <class T>
+Profiler<T>::~Profiler() {
+    delete[] arr;
 }
 
 template <class T>
 chrono::duration<double>* Profiler<T>::sortDatasets() {
     // variable to hold the timing data
     auto* timingData = new chrono::duration<double>[7];
-    cout << "Size: " << size << endl;
 
-    for (int i = 0; i < size; i++)
-        cout << this->arr[i] << " ";
-    cout << endl;
+    cout << "Size: " << size << endl;
 
     // Selection Sort
     SelectionSort<T> select(this->arr, this->size);
@@ -131,10 +137,6 @@ chrono::duration<double>* Profiler<T>::sortDatasets() {
     t2 = chrono::high_resolution_clock::now();
     timingData[6] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
     cout << "Tim sort took " << timingData[6].count() << " seconds." << endl;
-
-    for (int i = 0; i < size; i++)
-        cout << sort[i] << " ";
-    cout << endl;
 
     return timingData;
 }

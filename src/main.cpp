@@ -34,6 +34,7 @@ int main(int argc, char** argv) {
             cout << "String Sort: " << endl;
             r.sortString(out);
             cout << endl;
+            out.close();
         }
 //    }
 }
