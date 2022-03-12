@@ -10,6 +10,25 @@
 
 template <class T>
 class QuickSort : public Sort<T> {
+private:
+    /**
+     * Recursively splits array, petitions, and sorts. returns result
+     * @param arr array to be sorted
+     * @param low index of first element
+     * @param high index of last element
+     * @return T* the sorted array
+     */
+    T* sortHelp(T* arr, int low, int high);
+
+    /**
+     * Splits array based on a randomized pivot and returns position of pivot
+     * @param arr array to be sorted
+     * @param low index of first element
+     * @param high index of last element
+     * @return int index of petition
+     */
+    int partition(T* arr, int low, int high);
+
 public:
     /**
      * Default Constructor
@@ -22,22 +41,18 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     QuickSort(const T*, int);
     /**
      * Destructor
      */
-//    ~QuickSort();
 
     /**
      * Sorts the data array using QuickSort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;
-
-    T* sortHelp(T*, int, int);
-
-    int partition(T*, int, int);
 };
 
 template <class T>
@@ -55,53 +70,53 @@ QuickSort<T>::QuickSort(const T* other, int size) : Sort<T>(other, size){
 
 }
 
-//template <class T>
-//QuickSort<T>::~QuickSort() {
-//    if (this->data != nullptr)
-//        delete[] this->data;
-//}
-
 template <class T>
 T* QuickSort<T>::sort() {
+
+    //  copies array
     static QuickSort<T> temp(this->data, this->size);
     sortHelp(temp.data, 0, temp.size-1);
     return temp.data;
 }
 
 template <class T>
-T* QuickSort<T>::sortHelp(T* temp, int low, int high) {
+T* QuickSort<T>::sortHelp(T* arr, int low, int high) {
     if (low < high) {
-        int pivot = partition(temp, low, high);
+        int pivot = partition(arr, low, high);
 
-        sortHelp(temp, low, pivot - 1);
-        sortHelp(temp, pivot + 1, high);
+        sortHelp(arr, low, pivot - 1);
+        sortHelp(arr, pivot + 1, high);
     }
     else {
-        return temp;
+        return arr;
     }
 
 }
 
 template <class T>
-int QuickSort<T>::partition(T* temp, int low, int high) {
+int QuickSort<T>::partition(T* arr, int low, int high) {
+
+    //  chooses a random pivot
     srand(time(nullptr));
     int pivot = low + rand() % (high - low);
     int i = (low - 1);
 
-    std::swap(temp[pivot], temp[high]);
+    //  puts pivot value at the end of sub array
+    std::swap(arr[pivot], arr[high]);
     pivot = high;
 
+    //  iterates through array to sort items based on pivot
     for (int j = low; j <= high - 1; j++) {
-        if (temp[j] <= temp[pivot]) {
+        if (arr[j] <= arr[pivot]) {
             i++;
-            T val = temp[i];
-            temp[i] = temp[j];
-            temp[j] = val;
+            T val = arr[i];
+            arr[i] = arr[j];
+            arr[j] = val;
         }
     }
-    T val = temp[i + 1];
-    temp[i + 1] = temp[high];
-    temp[high] = val;
+    T val = arr[i + 1];
+    arr[i + 1] = arr[high];
+    arr[high] = val;
     return (i + 1);
 }
 

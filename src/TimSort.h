@@ -9,6 +9,25 @@
 
 template <class T>
 class TimSort : public Sort<T> {
+private:
+    /**
+     * Implementation of insertion sort for the smaller sub-arrays
+     * @param arr array to be sorted
+     * @param low index of first element
+     * @param high index of last element
+     */
+    void insertionSort(T* arr, int low, int high);
+
+    /**
+     * Implementation of merge sort to merge pre sorted sections of arrays
+     * from insertion sort
+     * @param arr array to be sorted
+     * @param low index of first element
+     * @param mid index of middle element
+     * @param high index of last element
+     */
+    void mergeSort(T* arr, int low, int mid, int high);
+
 public:
     /**
      * Default Constructor
@@ -21,18 +40,15 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     TimSort(const T* s, int c);
 
     /**
-     * Sorts the data array using SelectionSort and returns the result
+     * Sorts the data array using Tim Sort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;
-
-    void insertionSort(T*, int, int);
-
-    void mergeSort(T*, int, int, int);
 };
 
 template <class T>
@@ -54,6 +70,7 @@ template <class T>
 T* TimSort<T>::sort() {
     static TimSort<T> temp(this->data, this->size);
 
+    //  sorts every 32 elements separately with insertion
     for(int i = 0; i < temp.size; i+=32) {
         if(i+31 < temp.size-1)
             insertionSort(temp.data, i, (i+31));
@@ -61,6 +78,7 @@ T* TimSort<T>::sort() {
             insertionSort(temp.data, i, temp.size-1);
     }
 
+    //  merges presorted arrays from insertion
     for(int s = 32; s < temp.size; s*=2) {
 
         for(int low = 0; low < temp.size; low += 2*s) {
@@ -93,9 +111,13 @@ void TimSort<T>::insertionSort(T* arr, int low, int high) {
 template<class T>
 void TimSort<T>::mergeSort(T* arr, int low, int mid, int high) {
 
+    // exact same merge algorithm from merge sort
+
+    //  calculate size of left and right array
     int leftArrSize = mid - low + 1;
     int rightArrSize = high - mid;
 
+    //  copy left and right array
     T* leftArr = new T[leftArrSize];
     T* rightArr = new T[rightArrSize];
 
@@ -104,15 +126,22 @@ void TimSort<T>::mergeSort(T* arr, int low, int mid, int high) {
     for(int i = 0; i < rightArrSize; i++)
         rightArr[i] = arr[mid + 1 + i];
 
-
+    // merge left and right arrays in order
     int leftIndex = 0, rightIndex = 0, arrIndex = low;
     while(leftIndex < leftArrSize || rightIndex < rightArrSize) {
-        if(rightIndex == rightArrSize || leftArr[leftIndex] <= rightArr[rightIndex]) {
+        if(rightIndex == rightArrSize) {    // if right array is fully merged
+            arr[arrIndex] = leftArr[leftIndex];
+            leftIndex++;
+        } else if(leftIndex == leftArrSize) {   // if left array is fully merged
+            arr[arrIndex] = rightArr[rightIndex];
+            rightIndex++;
+        } else if(leftArr[leftIndex] <= rightArr[rightIndex]) { // adds smallest element
             arr[arrIndex] = leftArr[leftIndex];
             leftIndex++;
         } else {
             arr[arrIndex] = rightArr[rightIndex];
             rightIndex++;
+
         }
         arrIndex++;
     }

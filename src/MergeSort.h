@@ -9,6 +9,25 @@
 
 template <class T>
 class MergeSort : public Sort<T> {
+private:
+    /**
+     * Recursively splits the array in half until its just single element
+     * subsets, and then merges them together to sort.
+     * @param arr the array to sort
+     * @param left index of beginning of subset
+     * @param right index of end of subset
+     */
+    void sortHelp(T* arr, int left, int right);
+
+    /**
+     * Merges the left and right array and sorts them in order
+     * @param arr the array to sort
+     * @param left index of beginning element
+     * @param mid index of middle
+     * @param right index of lst element
+     */
+    void merge(T* arr, int left, int mid, int right);
+
 public:
     /**
      * Default Constructor
@@ -21,18 +40,15 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     MergeSort(const T* s, int c);
 
     /**
-     * Sorts the data array using SelectionSort and returns the result
+     * Sorts the data array using Merge Sort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;
-
-    void sortHelp(T*, int, int);
-
-    void merge(T*, int, int, int);
 };
 
 template <class T>
@@ -59,14 +75,15 @@ T* MergeSort<T>::sort() {
 }
 
 template<class T>
-void MergeSort<T>::sortHelp(T* temp, int left, int right) {
+void MergeSort<T>::sortHelp(T* arr, int left, int right) {
     if(left >= right)
         return;
 
+    //  split left and right half and merge them
     int mid = left + (right - left) / 2;
-    sortHelp(temp, left, mid);
-    sortHelp(temp, mid+1, right);
-    merge(temp, left, mid, right);
+    sortHelp(arr, left, mid);
+    sortHelp(arr, mid+1, right);
+    merge(arr, left, mid, right);
 
 
 }
@@ -76,9 +93,11 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
 
     //  Tried to implement an in place merge sort algorithm, but it got too complex rip
 
+    //  calculate size of left and right array
     int leftArrSize = mid - left + 1;
     int rightArrSize = right - mid;
 
+    //  copy left and right array
     T* leftArr = new T[leftArrSize];
     T* rightArr = new T[rightArrSize];
 
@@ -87,16 +106,17 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
     for(int i = 0; i < rightArrSize; i++)
         rightArr[i] = arr[mid + 1 + i];
 
-
+    // merge left and right arrays in order
     int leftIndex = 0, rightIndex = 0, arrIndex = left;
     while(leftIndex < leftArrSize || rightIndex < rightArrSize) {
-        if(rightIndex == rightArrSize) {
+
+        if(rightIndex == rightArrSize) {    // if right array is fully merged
             arr[arrIndex] = leftArr[leftIndex];
             leftIndex++;
-        } else if(leftIndex == leftArrSize) {
+        } else if(leftIndex == leftArrSize) {   // if left array is fully merged
             arr[arrIndex] = rightArr[rightIndex];
             rightIndex++;
-        } else if(leftArr[leftIndex] <= rightArr[rightIndex]) {
+        } else if(leftArr[leftIndex] <= rightArr[rightIndex]) { // adds smallest element
             arr[arrIndex] = leftArr[leftIndex];
             leftIndex++;
         } else {
@@ -111,25 +131,6 @@ void MergeSort<T>::merge(T* arr, int left, int mid, int right) {
         delete[] leftArr;
     if(rightArrSize != 0)
         delete[] rightArr;
-
-//    delete[] leftArr;
-//    delete[] rightArr;
-    /// ^^gave error when testing other lists soo...
-
-
-
-    ///if somethings doesnt work its bc of this commented out code-- so lmk so i can fix
-//    while(leftIndex < leftArrSize) {
-//        arr[arrIndex] = leftArr[leftIndex];
-//        leftIndex++;
-//        arrIndex++;
-//    }
-//
-//    while(rightIndex < rightArrSize) {
-//        arr[arrIndex] = rightArr[rightIndex];
-//        rightIndex++;
-//        arrIndex++;
-//    }
 
 }
 
