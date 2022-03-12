@@ -167,13 +167,23 @@ double* Profiler<T>::sortDatasets() {
     timingData[5] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
     cout << "Intro sort took " << timingData[5] << " seconds." << endl;
 
-    for (int i = 0; i < size - 1; i++)
+//    for(int i = 0; i < size; i++)
+//        std::cout << sort[i] << ",";
+//    std::cout << std::endl;
+
+    for (int i = 0; i < size - 1; i++) {
+//        std::cout << sort[i] << ",";
         if (sort[i] > sort[i + 1]) {
             sorted = false;
+//            std::cout << i << std::endl;
             break;
         }
+    }
+//    std::cout << std::endl;
+
     cout << ((sorted) ? "true" : "false") << endl;
     sorted = true;
+
 
     // Tim Sort
     InsertionSort<T> tim(this->arr, this->size);

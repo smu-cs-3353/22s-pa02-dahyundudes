@@ -66,6 +66,7 @@ Sort<T>::Sort(const T *other, int s) {
 
 template<class T>
 Sort<T>::~Sort() {
+//    std::cout << "destructor called" << std::endl;
     delete[] this->data;
 }
 
