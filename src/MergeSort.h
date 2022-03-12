@@ -40,11 +40,12 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     MergeSort(const T* s, int c);
 
     /**
-     * Sorts the data array using SelectionSort and returns the result
+     * Sorts the data array using Merge Sort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;

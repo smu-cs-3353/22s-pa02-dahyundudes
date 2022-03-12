@@ -21,15 +21,12 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     InsertionSort(const T*, int);
-    /**
-     * Destructor
-     */
-//    ~InsertionSort();
 
     /**
-     * Sorts the data array using InsertionSort and returns the result
+     * Sorts the data array using Insertion Sort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;
@@ -41,20 +38,10 @@ InsertionSort<T>::InsertionSort() : Sort<T>(){
 
 template <class T>
 InsertionSort<T>::InsertionSort(const Sort<T>& other) : Sort<T>(other){
-//    if (sizeof(other.data) > 0) {
-//        this->data = new T[sizeof(other.data)];
-//        for (int i = 0; i < sizeof(other.data); i++)
-//            this->data[i] = other.data[i];
-//    }
 }
 
 template <class T>
 InsertionSort<T>::InsertionSort(const T* other, int size) : Sort<T>(other, size) {
-//    if (sizeof(other > 0)) {
-//        this->data = new T[sizeof(other)];
-//        for (int i = 0; i < sizeof(other); i++)
-//            this->data[i] = other[i];
-//    }
 }
 
 template <class T>
@@ -64,6 +51,7 @@ T* InsertionSort<T>::sort() {
     for (int i = 1; i < temp.size; i++) {
         int j = i;
         while (j > 0 && temp.data[j] < temp.data[j-1]) {
+            // swap smallest element
             T val = temp.data[j-1];
             temp.data[j-1] = temp.data[j];
             temp.data[j] = val;

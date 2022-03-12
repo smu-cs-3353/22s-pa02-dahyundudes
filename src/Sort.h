@@ -21,6 +21,7 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param s size of array
      */
     Sort(const T*, int s);
     /**
@@ -34,6 +35,10 @@ public:
      */
     virtual T* sort();
 
+    /**
+     * returns size of array
+     * @return int size of array
+     */
     int getSize();
 };
 
@@ -66,7 +71,6 @@ Sort<T>::Sort(const T *other, int s) {
 
 template<class T>
 Sort<T>::~Sort() {
-//    std::cout << "destructor called" << std::endl;
     delete[] this->data;
 }
 

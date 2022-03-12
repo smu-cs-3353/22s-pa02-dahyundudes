@@ -5,9 +5,9 @@
 #ifndef INC_22S_PA02_INTROSORT_H
 #define INC_22S_PA02_INTROSORT_H
 
-#include "Sort.h"
 #include <random>
 #include <algorithm>
+#include "Sort.h"
 
 using namespace std;
 
@@ -65,6 +65,7 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     IntroSort(const T* s, int c);
 
