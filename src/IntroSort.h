@@ -166,9 +166,6 @@ int IntroSort<T>::quickSort(T* arr, int low, int high) {
 
 template<class T>
 void IntroSort<T>::heapify(T* arr, int size, int i) {
-
-
-
     int large = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -195,9 +192,6 @@ void IntroSort<T>::heapify(T* arr, int size, int i) {
 
 template<class T>
 void IntroSort<T>::heapSort(T* arr, int size) {
-//    int size = high - low + 1;
-
-
     // build heap by rearranging array by comparing left and right half values
     for(int i = size / 2 - 1; i >= 0; i--) {
         heapify(arr, size, i);
