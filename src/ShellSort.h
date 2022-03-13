@@ -21,6 +21,7 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     ShellSort(const T* s, int c);
 
@@ -48,21 +49,24 @@ ShellSort<T>::ShellSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* ShellSort<T>::sort() {
-    static ShellSort<T> temp(this->data, this->size);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
-    for (int gap = temp.size/2; gap > 0; gap /= 2) {
-        for (int i = gap; i < temp.size; i += 1) {
-            int val = temp.data[i];
+    //  Similar to insertion, but optimized for moving items far apart
+    for (int gap = this->size/2; gap > 0; gap /= 2) {
+        for (int i = gap; i < this->size; i += 1) {
+            T val = temp[i];
             int j = i;
-            while(j >= gap && temp.data[j - gap] > val) {
-                temp.data[j] = temp.data[j - gap];
+            while(j >= gap && temp[j - gap] > val) {
+                temp[j] = temp[j - gap];
                 j-=gap;
             }
 
-            temp.data[j] = val;
+            temp[j] = val;
         }
     }
-    return temp.data;
+    return temp;
 }
 
 #endif //INC_22S_PA02_SHELLSORT_H

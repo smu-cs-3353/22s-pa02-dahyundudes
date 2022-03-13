@@ -28,6 +28,10 @@ $ g++ src/main.cpp
 ```
 Run the program, this program takes __ command line arguments
 
+```text
+data/size100/100-60ascending_noDup.txt data/size100/100-random_20Dup.txt data/size100/100-random_40Dup.txt data/size1000/1000-60ascending_noDup.txt data/size1000/1000-random_20Dup.txt data/size1000/1000-random_40Dup.txt data/size10000/10000-60ascending_noDup.txt data/size10000/10000-random_20Dup.txt data/size10000/10000-random_40Dup.txt data/size50000/50000-60ascending_noDup.txt data/size50000/50000-random_20Dup.txt data/size50000/50000-random_40Dup.txt data/size100000/100000-60ascending_noDup.txt data/size100000/100000-random_20Dup.txt data/size100000/100000-random_40Dup.txt data/size500000/500000-60ascending_noDup.txt data/size500000/500000-random_20Dup.txt data/size500000/500000-random_40Dup.txt data/size1mil/60ascending_noDup.txt data/size1mil/ascending_noDup.txt data/size1mil/random_20Dup.txt data/size1mil/random_40Dup.txt data/size1mil/random_noDup.txt
+```
+
 ## Dataset Generation
 In order to test the efficiencies of each of the sorting algorithms, different datasets have been generated.
 The datasets have been split into two categories, integer based and string based,

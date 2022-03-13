@@ -5,7 +5,8 @@
 #include <iostream>
 #include <iomanip>
 #include <chrono>
-#include "Profiler.h"
+#include "Runner.h"
+#include "DSString.h"
 
 using namespace std;
 
@@ -19,23 +20,42 @@ int main(int argc, char** argv) {
             if (i < argc - 1)
                 cout << ", ";
         }
-        cout << endl;
+        cout << endl << endl;
 
-        int size = 10000;
+        ofstream* out = new ofstream[6];
 
-        int* temp = new int[size];
-        for (int i = 0; i < size; i++) {
-            temp[size-1 - i] = i;
+        out[0].open("./data/InsertionSort.csv");
+        out[1].open("./data/QuickSort.csv");
+        out[2].open("./data/ShellSort.csv");
+        out[3].open("./data/MergeSort.csv");
+        out[4].open("./data/IntroSort.csv");
+        out[5].open("./data/TimSort.csv");
+
+        for (int i = 0; i < 6; i++)
+            out[i] << fixed << setprecision(7) << "Dataset,Type,Size,Time" << endl;
+
+        int min = (argc - 16 > 0) ? 16 : argc;
+
+        // loop through the list of arguments
+        for (int i = 1; i < argc; i++) {
+            Runner r;
+            // print out the argument
+            cout << argv[i] << endl;
+
+            // cast it to a DSString
+            DSString fileName(argv[i]);
+
+            r.readFile(argv[i]);
+
+            cout << endl;
+            cout << "Int Sort: " << endl;
+            r.sortInt(out);
+            cout << "String Sort: " << endl;
+            r.sortString(out);
+            cout << endl;
         }
 
-        int* result;
-        cout << "Original list: ";
-        for (int i = 0; i < size; i++) {
-            cout << temp[i] << ",";
-        }
-        cout << endl;
-
-        Profiler<int> p(temp, size);
-        chrono::duration<double>* times = p.sortDatasets();
-    }
+        for (int i = 0; i < 6; i++)
+            out[i].close();
+//    }
 }

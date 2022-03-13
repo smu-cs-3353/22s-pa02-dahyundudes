@@ -21,6 +21,7 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param s size of array
      */
     Sort(const T*, int s);
     /**
@@ -34,6 +35,10 @@ public:
      */
     virtual T* sort();
 
+    /**
+     * returns size of array
+     * @return int size of array
+     */
     int getSize();
 };
 
@@ -54,7 +59,7 @@ Sort<T>::Sort(const Sort<T> &other) {
 }
 
 template<class T>
-Sort<T>::Sort(const T *other, int s) {
+Sort<T>::Sort(const T* other, int s) {
     if (s > 0) {
         this->size = s;
         this->data = new T[this->size];
@@ -66,8 +71,7 @@ Sort<T>::Sort(const T *other, int s) {
 
 template<class T>
 Sort<T>::~Sort() {
-    if (this->data != nullptr)
-        delete[] this->data;
+    delete[] this->data;
 }
 
 template<class T>
