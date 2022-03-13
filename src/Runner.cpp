@@ -15,6 +15,7 @@ Runner::~Runner() {
 }
 
 void Runner::readFile(string filePath) {
+    this->filePath = filePath;
     ifstream file(filePath);
     if (!file.is_open()) {
         throw std::logic_error("File not found.");
@@ -45,24 +46,22 @@ void Runner::readFile(string filePath) {
     file.close();
 }
 
-void Runner::sortInt(ofstream& out) {
+void Runner::sortInt(ofstream*& out) {
     double* time = pInt->sortDatasets();
-    for (int i = 0; i < 7; i++) {
-        out << time[i];
-        if (i < 6)
-            out << ",";
+    for (int i = 0; i < 6; i++) {
+        out[i] << filePath << ",";
+        out[i] << pInt->getSize() << ",";
+        out[i] << time[i] << endl;
     }
-    out << endl;
     delete[] time;
 }
 
-void Runner::sortString(ofstream& out) {
+void Runner::sortString(ofstream*& out) {
     double* time = pString->sortDatasets();
-    for (int i = 0; i < 7; i++) {
-        out << time[i];
-        if (i < 6)
-            out << ",";
+    for (int i = 0; i < 6; i++) {
+        out[i] << filePath << ",";
+        out[i] << pString->getSize() << ",";
+        out[i] << time[i] << endl;
     }
-    out << endl;
     delete[] time;
 }

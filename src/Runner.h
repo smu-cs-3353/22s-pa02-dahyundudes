@@ -15,6 +15,7 @@ class Runner {
 private:
     Profiler<int>* pInt;
     Profiler<string>* pString;
+    string filePath;
 public:
     Runner();
 
@@ -22,9 +23,9 @@ public:
 
     void readFile(string);
 
-    void sortInt(ofstream&);
+    void sortInt(ofstream*&);
 
-    void sortString(ofstream&);
+    void sortString(ofstream*&);
 };
 
 

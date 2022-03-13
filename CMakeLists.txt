@@ -32,6 +32,6 @@ foreach(file IN LISTS 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 2
 endforeach()
 
 add_executable(pa02 src/main.cpp src/Runner.cpp src/Profiler.h src/Sort.h src/SelectionSort.h src/InsertionSort.h
-        src/QuickSort.h src/TestSort.h src/ShellSort.h src/MergeSort.h src/IntroSort.h src/TimSort.h)
+        src/QuickSort.h src/TestSort.h src/ShellSort.h src/MergeSort.h src/IntroSort.h src/TimSort.h src/DSString.cpp)
 add_executable(pa02_test src/catch_setup.cpp src/test.cpp src/Sort.h)
 
