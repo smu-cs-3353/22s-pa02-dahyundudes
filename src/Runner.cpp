@@ -53,6 +53,7 @@ void Runner::sortInt(ofstream*& out) {
         if (start == -1)
             start = filePath.find('/', 2) + 1;
         out[i] << filePath.substring(start, filePath.getLength() - start - 4) << ",";
+        out[i] << "int,";
         out[i] << pInt->getSize() << ",";
         out[i] << time[i] << endl;
     }
@@ -62,7 +63,11 @@ void Runner::sortInt(ofstream*& out) {
 void Runner::sortString(ofstream*& out) {
     double* time = pString->sortDatasets();
     for (int i = 0; i < 6; i++) {
-        out[i] << filePath << ",";
+        int start = filePath.find('-') + 1;
+        if (start == -1)
+            start = filePath.find('/', 2) + 1;
+        out[i] << filePath.substring(start, filePath.getLength() - start - 4) << ",";
+        out[i] << "string,";
         out[i] << pString->getSize() << ",";
         out[i] << time[i] << endl;
     }

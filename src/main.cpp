@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
         out[5].open("./data/TimSort.csv");
 
         for (int i = 0; i < 6; i++)
-            out[i] << fixed << setprecision(7) << "Dataset,Size,Time" << endl;
+            out[i] << fixed << setprecision(7) << "Dataset,Type,Size,Time" << endl;
 
         int min = (argc - 16 > 0) ? 16 : argc;
 
