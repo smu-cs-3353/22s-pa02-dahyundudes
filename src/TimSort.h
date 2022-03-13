@@ -68,29 +68,31 @@ TimSort<T>::TimSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* TimSort<T>::sort() {
-    static TimSort<T> temp(this->data, this->size);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
     //  sorts every 32 elements separately with insertion
-    for(int i = 0; i < temp.size; i+=32) {
-        if(i+31 < temp.size-1)
-            insertionSort(temp.data, i, (i+31));
+    for(int i = 0; i < this->size; i+=32) {
+        if(i+31 < this->size-1)
+            insertionSort(temp, i, (i+31));
         else
-            insertionSort(temp.data, i, temp.size-1);
+            insertionSort(temp, i, this->size-1);
     }
 
     //  merges presorted arrays from insertion
-    for(int s = 32; s < temp.size; s*=2) {
+    for(int s = 32; s < this->size; s*=2) {
 
-        for(int low = 0; low < temp.size; low += 2*s) {
-            int mid = low + temp.size - 1;
-            int high = ((low + 2*temp.size - 1) < temp.size-1) ? (low + 2*temp.size - 1) : temp.size-1;
+        for(int low = 0; low < this->size; low += 2*s) {
+            int mid = low + this->size - 1;
+            int high = ((low + 2*this->size - 1) < this->size-1) ? (low + 2*this->size - 1) : this->size-1;
 
             if(mid < high)
-                mergeSort(temp.data, low, mid, high);
+                mergeSort(temp, low, mid, high);
         }
     }
 
-    return temp.data;
+    return temp;
 }
 
 template<class T>

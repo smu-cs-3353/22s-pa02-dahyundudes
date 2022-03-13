@@ -68,10 +68,12 @@ MergeSort<T>::MergeSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* MergeSort<T>::sort() {
-    static MergeSort<T> temp(this->data, this->size);
-    sortHelp(temp.data, 0 ,temp.size-1);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
+    sortHelp(temp, 0 ,this->size-1);
 
-    return temp.data;
+    return temp;
 }
 
 template<class T>

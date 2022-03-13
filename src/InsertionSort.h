@@ -46,19 +46,21 @@ InsertionSort<T>::InsertionSort(const T* other, int size) : Sort<T>(other, size)
 
 template <class T>
 T* InsertionSort<T>::sort() {
-    static InsertionSort<T> temp(this->data, this->size);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
-    for (int i = 1; i < temp.size; i++) {
+    for (int i = 1; i < this->size; i++) {
         int j = i;
-        while (j > 0 && temp.data[j] < temp.data[j-1]) {
+        while (j > 0 && temp[j] < temp[j-1]) {
             // swap smallest element
-            T val = temp.data[j-1];
-            temp.data[j-1] = temp.data[j];
-            temp.data[j] = val;
+            T val = temp[j-1];
+            temp[j-1] = temp[j];
+            temp[j] = val;
             j--;
         }
     }
-    return temp.data;
+    return temp;
 }
 
 #endif //INC_22S_PA02_INSERTIONSORT_H

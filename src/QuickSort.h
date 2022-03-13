@@ -72,11 +72,12 @@ QuickSort<T>::QuickSort(const T* other, int size) : Sort<T>(other, size){
 
 template <class T>
 T* QuickSort<T>::sort() {
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
-    //  copies array
-    static QuickSort<T> temp(this->data, this->size);
-    sortHelp(temp.data, 0, temp.size-1);
-    return temp.data;
+    sortHelp(temp, 0, this->size-1);
+    return temp;
 }
 
 template <class T>
