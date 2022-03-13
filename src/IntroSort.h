@@ -5,14 +5,54 @@
 #ifndef INC_22S_PA02_INTROSORT_H
 #define INC_22S_PA02_INTROSORT_H
 
-#include "Sort.h"
 #include <random>
 #include <algorithm>
+#include "Sort.h"
 
 using namespace std;
 
 template <class T>
 class IntroSort : public Sort<T> {
+private:
+    /**
+     *
+     */
+    void sortHelp(T*, int, int, int);
+
+    /**
+     * Implementation of insertion sort for when data subset is < 16 elements
+     * @param arr array of elements to be sorted
+     * @param begin  index of first element in subset
+     * @param end index of last element in subset
+     */
+    void insertionSort(T* arr, int begin, int end);
+
+    /**
+     *  Implementation of quicksort when recursion depth of subset is
+     *  low enough to avoid worst case scenarios
+     *  @param arr array of elements to be sorted
+     *  @param low index of first element in subset
+     *  @param high index of last element in subset
+     * @return index for splitting
+     */
+    int quickSort(T* arr, int low, int high);
+
+    /**
+     * Creates max heap of the data subset recursively by comparing left
+     * and right children, then swapping the root with the largest value
+     * @param arr array of elements to be sorted
+     * @param size size of array
+     * @param i index of root
+     */
+    void heapify(T* arr, int size, int i);
+
+    /**
+     * Implementation of heap sort that creates the max heaps and sorts elements
+     * one by one
+     * @param arr array of elements
+     * @param size size of array
+     */
+    void heapSort(T* arr, int size);
 public:
     /**
      * Default Constructor
@@ -25,24 +65,15 @@ public:
     /**
      * Overloaded Constructor
      * @param T* array of templated elements
+     * @param int size of array
      */
     IntroSort(const T* s, int c);
 
     /**
-     * Sorts the data array using SelectionSort and returns the result
+     * Sorts the data array using IntroSort and returns the result
      * @return T* array of templated elements
      */
     T* sort() override;
-
-    void sortHelp(T*, int, int, int);
-
-    void insertionSort(T*, int, int);
-
-    int quickSort(T*, int, int);
-
-    void heapify(T*, int, int);
-
-    void heapSort(T*, int);
 };
 
 template <class T>
@@ -62,12 +93,14 @@ IntroSort<T>::IntroSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* IntroSort<T>::sort() {
-    ///Make sure to figure out how this works!!!!
-    static IntroSort<T> temp(this->data, this->size);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
-    int dl = 2 * log(temp.size-1);
-    sortHelp(temp.data, 0, temp.size-1, dl);
-    return temp.data;
+    //  calculates max depth
+    int dl = 2 * log(this->size-1);
+    sortHelp(temp, 0, this->size-1, dl);
+    return temp;
 }
 
 template<class T>
@@ -75,13 +108,15 @@ void IntroSort<T>::sortHelp(T* arr, int begin, int end, int depth) {
 
     int size = end - begin + 1;
 
+    //  if list is small, more efficient to sort by insertion
     if(size < 16) {
         insertionSort(arr, begin, end);
         return;
     }
 
+    //  sorts by heap sort to all for optimized quicksort
     if(depth == 0) {
-        heapSort(arr, end);
+        heapSort(arr+begin, size);
         return;
     }
 
@@ -131,7 +166,6 @@ int IntroSort<T>::quickSort(T* arr, int low, int high) {
 
 template<class T>
 void IntroSort<T>::heapify(T* arr, int size, int i) {
-
     int large = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -158,12 +192,12 @@ void IntroSort<T>::heapify(T* arr, int size, int i) {
 
 template<class T>
 void IntroSort<T>::heapSort(T* arr, int size) {
-
     // build heap by rearranging array by comparing left and right half values
     for(int i = size / 2 - 1; i >= 0; i--) {
         heapify(arr, size, i);
     }
 
+    //  sorts array one by one
     for(int i = size - 1; i > 0; i--) {
         std::swap(arr[0], arr[i]);
         heapify(arr, i, 0);

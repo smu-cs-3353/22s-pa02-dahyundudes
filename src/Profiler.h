@@ -38,20 +38,18 @@ public:
      */
     Profiler(T*, int);
 
+    ~Profiler();
+
     /**
      * Sort the dataset using each sort and return an array of times
      *
      * @return double* the array of times
      */
-    chrono::duration<double>* sortDatasets();
+    double* sortDatasets();
 
-    /**
-     * Sort the dataset using the specified sort and return the timing data
-     *
-     * @param int the number of sort to test
-     * @return double the time the sort took
-     */
-    double sortDataset(int);
+    double time(string, Sort<T>&);
+
+    int getSize();
 };
 
 template <class T>
@@ -62,143 +60,75 @@ Profiler<T>::Profiler() {
 
 template <class T>
 Profiler<T>::Profiler(T* arr, int size) {
-    this->arr = arr;
+    this->arr = new T[size];
+    for (int i = 0; i < size; i++)
+        this->arr[i] = arr[i];
     this->size = size;
-//<<<<<<< HEAD
-//=======
-//    if (this->size > sizeof(this->arr)/sizeof(this->arr[0]))
-//        this->size = sizeof(this->arr)/sizeof(this->arr[0]);
-//>>>>>>> 2f3421fac3229311b50649fa6993b113a8b22804
 }
 
 template <class T>
-chrono::duration<double>* Profiler<T>::sortDatasets() {
-    // variable to hold the timing data
-    auto* timingData = new chrono::duration<double>[7];
+Profiler<T>::~Profiler() {
+    delete[] arr;
+}
 
-    // Selection Sort
-    SelectionSort<T> select(this->arr, this->size);
-    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
-    select.sort();
-    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-    timingData[0] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Selection sort took " << timingData[0].count() << " seconds." << endl << endl;
+template <class T>
+double* Profiler<T>::sortDatasets() {
+    // variable to hold the timing data
+    double* timingData = new double[6];
+
+    for (int i = 0; i < 6; i++)
+        timingData[i] = 0;
+
+    cout << "Size: " << size << endl;
 
     // Insertion Sort
     InsertionSort<T> insert(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    insert.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[1] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Insertion sort took " << timingData[1].count() << " seconds." << endl << endl;
+    timingData[0] = time("Insertion", insert);
 
     // Quick Sort
     QuickSort<T> quick(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    quick.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[2] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Quick sort took " << timingData[2].count() << " seconds." << endl << endl;
+    timingData[1] = time("Quick", quick);
 
     // Shell Sort
     ShellSort<T> shell(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    shell.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[3] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Shell sort took " << timingData[3].count() << " seconds." << endl << endl;
+    timingData[2] = time("Shell", shell);
 
     // Merge Sort
     MergeSort<T> merge(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    merge.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[4] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Merge sort took " << timingData[4].count() << " seconds." << endl << endl;
+    timingData[3] = time("Merge", merge);
 
     // Intro Sort
     IntroSort<T> intro(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    intro.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[5] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Intro sort took " << timingData[5].count() << " seconds." << endl << endl;
+    timingData[4] = time("Intro", intro);
 
     // Tim Sort
-    InsertionSort<T> tim(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    tim.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[6] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-    cout << "Tim sort took " << timingData[6].count() << " seconds." << endl << endl;
+    TimSort<T> tim(this->arr, this->size);
+    timingData[5] = time("Tim", tim);
 
     return timingData;
 }
 
 template <class T>
-double Profiler<T>::sortDataset(int i) {
-    chrono::high_resolution_clock::time_point t1, t2;
+double Profiler<T>::time(string name, Sort<T>& temp) {
     double timingData = 0;
-    switch(i) {
-        case 0:
-            SelectionSort<T> select(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            select.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Selection sort took " << timingData[0].count() << " seconds." << endl << endl;
-            break;
-        case 1:
-            InsertionSort<T> insert(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            insert.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[1] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Insertion sort took " << timingData[1].count() << " seconds." << endl << endl;
-            break;
-        case 2:
-            QuickSort<T> quick(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            quick.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[2] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Quick sort took " << timingData[2].count() << " seconds." << endl << endl;
-            break;
-        case 3:
-            ShellSort<T> shell(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            shell.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[3] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Shell sort took " << timingData[3].count() << " seconds." << endl << endl;
-            break;
-        case 4:
-            MergeSort<T> merge(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            merge.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[4] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Merge sort took " << timingData[4].count() << " seconds." << endl << endl;
-            break;
-        case 5:
-            IntroSort<T> intro(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            intro.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[5] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Intro sort took " << timingData[5].count() << " seconds." << endl << endl;
-            break;
-        case 6:
-            InsertionSort<T> tim(this->arr, this->size);
-            t1 = chrono::high_resolution_clock::now();
-            tim.sort();
-            t2 = chrono::high_resolution_clock::now();
-            timingData[6] = chrono::duration_cast<chrono::duration<double>>(t2 - t1);
-            cout << "Tim sort took " << timingData[6].count() << " seconds." << endl << endl;
-            break;
-        default: cout << "Invalid choice." << endl;
-    }
+
+    // the start time
+    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+
+    // sort the array and grab the pointer to the sorted array
+    T* sort = temp.sort();
+
+    // the end time
+    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
+
+    // grab the difference between start and end time to get the total time
+    timingData = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
+    cout << name << " sort took " << timingData << " seconds." << endl;
+
     return timingData;
 }
+
+template <class T>
+int Profiler<T>::getSize() { return this->size; }
 
 #endif //INC_22S_PA02_PROFILER_H
