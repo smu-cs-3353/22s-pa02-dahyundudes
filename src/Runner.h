@@ -10,12 +10,13 @@
 #include <cstring>
 
 #include "Profiler.h"
+#include "DSString.h"
 
 class Runner {
 private:
     Profiler<int>* pInt;
     Profiler<string>* pString;
-    string filePath;
+    DSString filePath;
 public:
     Runner();
 

@@ -22,7 +22,6 @@ int main(int argc, char** argv) {
         }
         cout << endl << endl;
 
-        Runner r;
         ofstream* out = new ofstream[6];
 
         out[0].open("./data/InsertionSort.csv");
@@ -33,10 +32,13 @@ int main(int argc, char** argv) {
         out[5].open("./data/TimSort.csv");
 
         for (int i = 0; i < 6; i++)
-            out[i] << fixed << setprecision(7) << "File,Size,Time" << endl;
+            out[i] << fixed << setprecision(7) << "Dataset,Size,Time" << endl;
+
+        int min = (argc - 16 > 0) ? 16 : argc;
 
         // loop through the list of arguments
         for (int i = 1; i < argc; i++) {
+            Runner r;
             // print out the argument
             cout << argv[i] << endl;
 

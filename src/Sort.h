@@ -23,7 +23,7 @@ public:
      * @param T* array of templated elements
      * @param s size of array
      */
-    Sort(const T*&, int s);
+    Sort(const T*, int s);
     /**
      * Destructor
      */
@@ -59,7 +59,7 @@ Sort<T>::Sort(const Sort<T> &other) {
 }
 
 template<class T>
-Sort<T>::Sort(const T*& other, int s) {
+Sort<T>::Sort(const T* other, int s) {
     if (s > 0) {
         this->size = s;
         this->data = new T[this->size];

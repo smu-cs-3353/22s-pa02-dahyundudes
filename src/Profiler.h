@@ -36,7 +36,7 @@ public:
      * @param T* the array to be sorted
      * @param int the size of the array (or the amount of the array that should be sorted)
      */
-    Profiler(T*&, int);
+    Profiler(T*, int);
 
     ~Profiler();
 
@@ -46,6 +46,8 @@ public:
      * @return double* the array of times
      */
     double* sortDatasets();
+
+    double time(string, Sort<T>&);
 
     int getSize();
 };
@@ -57,7 +59,7 @@ Profiler<T>::Profiler() {
 }
 
 template <class T>
-Profiler<T>::Profiler(T*& arr, int size) {
+Profiler<T>::Profiler(T* arr, int size) {
     this->arr = new T[size];
     for (int i = 0; i < size; i++)
         this->arr[i] = arr[i];
@@ -79,125 +81,49 @@ double* Profiler<T>::sortDatasets() {
 
     cout << "Size: " << size << endl;
 
-    bool sorted = true;
-
-    /*
-    // Selection Sort
-    SelectionSort<T> select(this->arr, this->size);
-    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
-    T* sort = select.sort();
-    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-    timingData[0] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Selection sort took " << timingData[0] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
-    */
-
     // Insertion Sort
     InsertionSort<T> insert(this->arr, this->size);
-    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
-    T* sort = insert.sort();
-    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
-    timingData[0] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Insertion sort took " << timingData[0] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
+    timingData[0] = time("Insertion", insert);
 
     // Quick Sort
     QuickSort<T> quick(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    sort = quick.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[1] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Quick sort took " << timingData[1] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
+    timingData[1] = time("Quick", quick);
 
     // Shell Sort
     ShellSort<T> shell(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    sort = shell.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[2] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Shell sort took " << timingData[2] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
+    timingData[2] = time("Shell", shell);
 
     // Merge Sort
     MergeSort<T> merge(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    sort = merge.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[3] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Merge sort took " << timingData[3] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
+    timingData[3] = time("Merge", merge);
 
     // Intro Sort
     IntroSort<T> intro(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    sort = intro.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[4] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Intro sort took " << timingData[4] << " seconds." << endl;
-
-    for (int i = 0; i < size - 1; i++) {
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
-        }
-    }
-
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
-
+    timingData[4] = time("Intro", intro);
 
     // Tim Sort
-    InsertionSort<T> tim(this->arr, this->size);
-    t1 = chrono::high_resolution_clock::now();
-    sort = tim.sort();
-    t2 = chrono::high_resolution_clock::now();
-    timingData[5] = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
-    cout << "Tim sort took " << timingData[5] << " seconds." << endl;
+    TimSort<T> tim(this->arr, this->size);
+    timingData[5] = time("Tim", tim);
 
-    for (int i = 0; i < size - 1; i++)
-        if (sort[i] > sort[i + 1]) {
-            sorted = false;
-            break;
+    return timingData;
+}
 
-        }
-    cout << ((sorted) ? "true" : "false") << endl;
-    sorted = true;
+template <class T>
+double Profiler<T>::time(string name, Sort<T>& temp) {
+    double timingData = 0;
+
+    // the start time
+    chrono::high_resolution_clock::time_point t1 = chrono::high_resolution_clock::now();
+
+    // sort the array and grab the pointer to the sorted array
+    T* sort = temp.sort();
+
+    // the end time
+    chrono::high_resolution_clock::time_point t2 = chrono::high_resolution_clock::now();
+
+    // grab the difference between start and end time to get the total time
+    timingData = chrono::duration_cast<chrono::duration<double>>(t2 - t1).count();
+    cout << name << " sort took " << timingData << " seconds." << endl;
 
     return timingData;
 }

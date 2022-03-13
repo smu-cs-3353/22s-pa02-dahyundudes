@@ -93,13 +93,14 @@ IntroSort<T>::IntroSort(const T* s, int c) : Sort<T>(s, c) {
 
 template <class T>
 T* IntroSort<T>::sort() {
-    ///Make sure to figure out how this works!!!!
-    static IntroSort<T> temp(this->data, this->size);
+    T* temp = new T[this->size];
+    for (int i = 0; i < this->size; i++)
+        temp[i] = this->data[i];
 
     //  calculates max depth
-    int dl = 2 * log(temp.size-1);
-    sortHelp(temp.data, 0, temp.size-1, dl);
-    return temp.data;
+    int dl = 2 * log(this->size-1);
+    sortHelp(temp, 0, this->size-1, dl);
+    return temp;
 }
 
 template<class T>
