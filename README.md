@@ -19,17 +19,18 @@ $ sudo apt-get install g++
 
 ## Usage
 First, navigate to the project directory.
-```text
+```bash
 $ cd FullFilePathHere
 ```
 Next, compile all the relevant files using g++
-```text
+```bash
 $ g++ src/main.cpp 
 ```
-Run the program, this program takes __ command line arguments
+Run the program, this program takes any command line arguments: the relative path to the datasets
+wishing to be tested.
 
-```text
-data/size100/100-60ascending_noDup.txt data/size100/100-random_20Dup.txt data/size100/100-random_40Dup.txt data/size1000/1000-60ascending_noDup.txt data/size1000/1000-random_20Dup.txt data/size1000/1000-random_40Dup.txt data/size10000/10000-60ascending_noDup.txt data/size10000/10000-random_20Dup.txt data/size10000/10000-random_40Dup.txt data/size50000/50000-60ascending_noDup.txt data/size50000/50000-random_20Dup.txt data/size50000/50000-random_40Dup.txt data/size100000/100000-60ascending_noDup.txt data/size100000/100000-random_20Dup.txt data/size100000/100000-random_40Dup.txt data/size500000/500000-60ascending_noDup.txt data/size500000/500000-random_20Dup.txt data/size500000/500000-random_40Dup.txt data/size1mil/60ascending_noDup.txt data/size1mil/ascending_noDup.txt data/size1mil/random_20Dup.txt data/size1mil/random_40Dup.txt data/size1mil/random_noDup.txt
+```bash
+$ ./a.out data/size100/100-60ascending_noDup.txt data/size100/100-random_20Dup.txt data/size100/100-random_40Dup.txt data/size1000/1000-60ascending_noDup.txt data/size1000/1000-random_20Dup.txt data/size1000/1000-random_40Dup.txt data/size10000/10000-60ascending_noDup.txt data/size10000/10000-random_20Dup.txt data/size10000/10000-random_40Dup.txt data/size50000/50000-60ascending_noDup.txt data/size50000/50000-random_20Dup.txt data/size50000/50000-random_40Dup.txt data/size100000/100000-60ascending_noDup.txt data/size100000/100000-random_20Dup.txt data/size100000/100000-random_40Dup.txt data/size500000/500000-60ascending_noDup.txt data/size500000/500000-random_20Dup.txt data/size500000/500000-random_40Dup.txt data/size1mil/60ascending_noDup.txt data/size1mil/ascending_noDup.txt data/size1mil/random_20Dup.txt data/size1mil/random_40Dup.txt data/size1mil/random_noDup.txt
 ```
 
 ## Dataset Generation
@@ -71,8 +72,7 @@ through the list and picking the smallest item and placing it next in line. This
 for being very efficient on smaller lists, but very quickly gets worse for larger lists.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![insertion-int](graphs/Insertion-int.png)
-![insertion-string](graphs/Insertion-string.png)
+![insertion-together](graphs/Insertion-together.png)
 As shown in the graph, the insertion algorithm follows a nice O(n^2) line for its worse case
 runs. As expected, the dataset with the fastest run was the one with all ascending elements, followed by 
 the partially ascending and random with no duplicates. However, when it came to the datasets with duplicates, 
@@ -89,8 +89,7 @@ the left half is less than the pivot and the right half is greater. Although the
 Insertion sort, the and average case is reduced from O(n^2) to O(n ln n).
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![quick-int](graphs/Quick-int.png)
-![quick-string](graphs/Quick-string.png)
+![quick-together](graphs/Quick-together.png)
 
 These graphs seem to resemble the insertion sort graphs, in that it the upper bound loosely follows 
 a O(n^2) curve. However, in this case, the fully randomized set with no duplicates, more consistently 
@@ -107,8 +106,7 @@ algorithm, the lower and upper bounds are closer with both laying at (n ln n), a
 a more stable sort.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![merge-int](graphs/Merge-int.png) 
-![merge-string](graphs/Merge-string.png)
+![merge-together](graphs/Merge-together.png) 
 
 These graphs differ greatly from the those of the two sorts seen previously as the different datasets 
 seem to be more scattered in their performances. However, with a closer look we do see some similarities:
@@ -125,11 +123,10 @@ across large gaps. This is a case seen previously with the poor performance of t
 values had to be moved through the length of the list.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-<img alt="shell-int" height="230" src="graphs/Shell-int.png" width="440"/>
-<img alt="shell-int" height="230" src="graphs/Shell-string.png" width="440"/>
+![sort-together](graphs/Shell-together.png)
 
 Although the graphs seem to show that the worse case remains as significantly inefficient, a closer look 
-at the step size of the x-axis shows a significant improvement in performance. This closely resembles the 
+at the step size of the y-axis shows a significant improvement in performance. This closely resembles the 
 published bounds of this algorithm, as the upper bound still remains at O(n^2) with the two duplicate sets. The lower
 bound, in this case O(n ln n), still remains to be with fully sorted and partially sorted lists.
 
@@ -142,8 +139,18 @@ of insertion, quicksort, and heap sort in order to create a stable and dependabl
 lead to a highly advanced and difficult implementation.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![intro-int](graphs/Intro-int.png)
-![intro-string](graphs/Intro-string.png)
+![intro-together](graphs/Intro-together.png)
+Although the trend is much more obvious with the string datasets, this algorithm shows a great improvement in consistent 
+performance than all the previous algorithms. Unlike all the other algorithms, it is actually the fully ascending set
+for the integer graph that reaches the upper bound of the algorithm, that being O(n ln n). For the string graph, it
+still remains to be the duplicates sets, with the random closer to the lower bound. When the partially sorted
+set is introduced, it seems to follow the trend of the fully sorted set, similar to the other algorithms.
+
+Despite the disparity between the high and low performances for the integer sets seem great, it is important to 
+note the step size of the y-axis. The difference is only seen as great due to the small step size in time. 
+However, with the string graph, it is much easier to see how consistent and close the different sets are. 
+This is due to the mixture of the different algorithms in order to achieve consistent best cases. This makes the 
+algorithm work very well as the datasets grow larger.
 
 
 ### Tim Sort
@@ -151,8 +158,32 @@ Also a hybrid sort, this sort was created to be optimized for real world data fo
 includes implementation of merge and insertion sort.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![tim-int](graphs/Tim-int.png)
-![tim-string](graphs/Tim-string.png)
+![tim-together](graphs/Tim-together.png)
+This algorithm shows a more of a standard curve, with the best performing set being the fully sorted
+and the worst being the duplicates. Many of the trends remain the same, however, at a much faster rate. When 
+observing the time sizes on the y-axis, it's clear that this algorithm does achieve a higher level of efficiency
+in comparison to all the past algorithms, for both integer and string sets. Although the string set does
+still seem to be slower on average, the disparity in time between the string and integer set is far below that
+of the other algorithms, allowing the algorithm to work very well with larger datasets.
+
+As with the other sorts, these graphs also follow the published upper bounds, of O(n ln n).
+
+
+## Conclusion
+When comparing the algorithms against each other, one problem that is seen quickly is the extreme outlier that 
+the insertion sort grows to become as the data sets grow larger. Due to this, we will only show the remaining sets 
+to allow for a closer look.
+
+![full](graphs/Full.png)
+
+In all of these graphs, we see a general trend of Quicksort performing the lowest and timsort performing the best.
+All the remaining graphs scattered in between. This then leaves the question, which is the best sort. According to
+the data collected here, it seems that for larger data sets, especially for those reaching towards the millions, TimSort
+seems to be the best and most consistent sort. With all the datasets tested, TimSort shows the greatest consistency. 
+However, when use sorting smaller datasets, especially those under 100 elements, a simpler algorithm is 
+preferred. Insertion sort, despite being greatly inefficient with large datasets, is probably the best choice when 
+it comes to the smaller sets. This is mainly due to its easy implementation. Nevertheless, all these algorithms
+have their strengths and weaknesses and most of the time the best choice might depend on the situation.
 
 ## Credits
 
