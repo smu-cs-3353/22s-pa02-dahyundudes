@@ -101,7 +101,22 @@ integers, mainly do to the need to have more comparisons per element. Neverthele
 graphs follow similar trends.
 
 ### Merge Sort
-The merge sorting algorithm
+With merge sort, we begin to observe algorithms that sacrifice ease of implementation for efficiency. This algorithm
+follows a divide and conquer, by recursively splitting the set in half and merging the subsets in order. In this 
+algorithm, the lower and upper bounds are closer with both laying at (n ln n), allowing for
+a more stable sort.
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+![merge-int](graphs/Merge-int.png)
+![merge-int](graphs/Merge-string.png)
+These graphs differ greatly from the those of the two sorts seen previously as the different datasets 
+seem to be more scattered in their performances. However, with a closer look we do see some similarities:
+that being the fully ascending and partially ascending tend have a faster performance than the duplicate sets,
+as well as the string datasets all being less efficient than the integer sets. 
+
+One notable difference we do see is the drastic difference in the disparity between the best and worst performances
+of the algorithm. All the sets are more clumped together, showing a smaller difference between the worst performances
+and the best.
 
 ## Credits
 
