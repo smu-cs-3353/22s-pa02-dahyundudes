@@ -59,6 +59,49 @@ with either ints or string data types.
 
 All datasets can be found in the data folder.
 
+## Algorithm Analysis
+In this section we will be discussing the different observations reached when testing
+these algorithms with the various datasets. We will also include observations regarding 
+the performance of these algorithms as the datasets grew in size and how it compares with 
+published upper limits.
+
+### Insertion Sort
+Insertion sort works similarly to how you would sort playing cards in your hand: by iterating
+through the list and picking the smallest item and placing it next in line. This algorithm is known
+for being very efficient on smaller lists, but very quickly gets worse for larger lists.
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+![insertion-int](graphs/Insertion-int.png)
+![insertion-int](graphs/Insertion-string.png)
+As shown in the graph, the insertion algorithm follows a nice O(n^2) line for its worse case
+runs. As expected, the dataset with the fastest run was the one with all ascending elements, followed by 
+the partially ascending and random with no duplicates. However, when it came to the datasets with duplicates, 
+the efficiency of the algorithm reduced greatly. This could be due in part to the fact that the duplicate values
+were usually smaller values, resulting in iterating through the entire dataset to retrieve and place them. The 
+set that is 60% sorted shows a heightened efficiency in comparison to the duplicate sets. This is because insertion
+sort works best with partially sorted and smaller sets, as they require less comparisons overall. However, when
+it came to comparing strings, the randomized and partially sorted sets tended to rise in time.
+
+
+### Quick Sort
+The quicksort algorithm functions by recursively splitting the list along a randomly chosen pivot value, in which
+the left half is less than the pivot and the right half is greater. Although the upper bound is the same as 
+Insertion sort, the and average case is reduced from O(n^2) to O(n ln n).
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+![quick-int](graphs/Quick-int.png)
+![quick-int](graphs/Quick-string.png)
+
+These graphs seem to resemble the insertion sort graphs, in that it the upper bound loosely follows 
+a O(n^2) curve. However, in this case, the fully randomized set with no duplicates, more consistently 
+follows the fully ascending set. This matches the published values for the lower bound and average, as 
+both are O(n ln n). With the sets containing duplicates, as with insertion, the efficiency lowers due to 
+the need to have more comparisons. The performance also decreases greatly when comparing strings instead of 
+integers, mainly do to the need to have more comparisons per element. Nevertheless, both the integer and string
+graphs follow similar trends.
+
+### Merge Sort
+The merge sorting algorithm
 
 ## Credits
 
