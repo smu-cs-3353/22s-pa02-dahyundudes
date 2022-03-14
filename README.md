@@ -126,7 +126,7 @@ values had to be moved through the length of the list.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
 ![shell-int](graphs/Shell-int.png)
-<img alt="shell-int" height="340" src="graphs/Shell-string.png" width="600"/>
+<img alt="shell-int" height="230" src="graphs/Shell-string.png" width="400"/>
 
 Although the graphs seem to show that the worse case remains as significantly inefficient, a closer look 
 at the step size of the x-axis shows a significant improvement in performance. This closely resembles the 
