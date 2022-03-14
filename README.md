@@ -72,7 +72,7 @@ for being very efficient on smaller lists, but very quickly gets worse for large
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
 ![insertion-int](graphs/Insertion-int.png)
-![insertion-int](graphs/Insertion-string.png)
+![insertion-string](graphs/Insertion-string.png)
 As shown in the graph, the insertion algorithm follows a nice O(n^2) line for its worse case
 runs. As expected, the dataset with the fastest run was the one with all ascending elements, followed by 
 the partially ascending and random with no duplicates. However, when it came to the datasets with duplicates, 
@@ -90,7 +90,7 @@ Insertion sort, the and average case is reduced from O(n^2) to O(n ln n).
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
 ![quick-int](graphs/Quick-int.png)
-![quick-int](graphs/Quick-string.png)
+![quick-string](graphs/Quick-string.png)
 
 These graphs seem to resemble the insertion sort graphs, in that it the upper bound loosely follows 
 a O(n^2) curve. However, in this case, the fully randomized set with no duplicates, more consistently 
@@ -108,7 +108,7 @@ a more stable sort.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
 ![merge-int](graphs/Merge-int.png) 
-![merge-int](graphs/Merge-string.png)
+![merge-string](graphs/Merge-string.png)
 
 These graphs differ greatly from the those of the two sorts seen previously as the different datasets 
 seem to be more scattered in their performances. However, with a closer look we do see some similarities:
@@ -142,7 +142,8 @@ of insertion, quicksort, and heap sort in order to create a stable and dependabl
 lead to a highly advanced and difficult implementation.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-
+![intro-int](graphs/Intro-int.png)
+![intro-string](graphs/Intro-string.png)
 
 
 ### Tim Sort
@@ -150,9 +151,8 @@ Also a hybrid sort, this sort was created to be optimized for real world data fo
 includes implementation of merge and insertion sort.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-
-
-## Conclusion
+![tim-int](graphs/Tim-int.png)
+![tim-string](graphs/Tim-string.png)
 
 ## Credits
 
