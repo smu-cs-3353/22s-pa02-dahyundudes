@@ -107,8 +107,9 @@ algorithm, the lower and upper bounds are closer with both laying at (n ln n), a
 a more stable sort.
 
 Here are the graphs showing the algorithm's performance with the various integer and string datasets:
-![merge-int](graphs/Merge-int.png)
+![merge-int](graphs/Merge-int.png) 
 ![merge-int](graphs/Merge-string.png)
+
 These graphs differ greatly from the those of the two sorts seen previously as the different datasets 
 seem to be more scattered in their performances. However, with a closer look we do see some similarities:
 that being the fully ascending and partially ascending tend have a faster performance than the duplicate sets,
@@ -117,6 +118,40 @@ as well as the string datasets all being less efficient than the integer sets.
 One notable difference we do see is the drastic difference in the disparity between the best and worst performances
 of the algorithm. All the sets are more clumped together, showing a smaller difference between the worst performances
 and the best.
+
+### Shell Sort
+Shell sort is a variation on insertion sort that attempts to fix its worst case scenario, that being moving data
+across large gaps. This is a case seen previously with the poor performance of the duplicate sets, as the duplicate
+values had to be moved through the length of the list.
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+
+
+Although the graphs seem to show that the worse case remains as significantly inefficient, a closer look 
+at the step size of the x-axis shows a significant improvement in performance. This closely resembles the 
+published bounds of this algorithm, as the upper bound still remains at O(n^2) with the two duplicate sets. The lower
+bound, in this case O(n ln n), still remains to be with fully sorted and partially sorted lists.
+
+Unlike Insertion sort, this data set seems to handle the growing sizes of the datasets significantly better, showing
+a shallower curve. Additionally, the performance of the string sets is generally lower than that of the integer sets.
+
+### Intro Sort
+The sort used by the Standard Template Library, this sort is highly complex and serves to take the advantages,
+of insertion, quicksort, and heap sort in order to create a stable and dependable sorting algorithm. However, this does
+lead to a highly advanced and difficult implementation.
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+
+
+
+### Tim Sort
+Also a hybrid sort, this sort was created to be optimized for real world data for use in python. This sort
+includes implementation of merge and insertion sort.
+
+Here are the graphs showing the algorithm's performance with the various integer and string datasets:
+
+
+## Conclusion
 
 ## Credits
 
